@@ -11,8 +11,9 @@ import { useTheme } from "next-themes";
 
 const navigation = [
   { name: "Solutions", href: "/solutions" },
-  { name: "Blog", href: "/blog" },
   { name: "Pricing", href: "/pricing" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
 ];
 
 // Custom hook for mounted state

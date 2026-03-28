@@ -8,13 +8,12 @@ const footerLinks = {
     { name: "Solutions", href: "/solutions" },
     { name: "Pricing", href: "/pricing" },
     { name: "Integrations", href: "/solutions#integrations" },
-    { name: "API Docs", href: "#" },
+    { name: "API Docs", href: "/solutions/custom-apis" },
   ],
   company: [
-    { name: "About", href: "#" },
     { name: "Blog", href: "/blog" },
-    { name: "Careers", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Contact", href: "/contact" },
+  { name: "Support", href: "/contact" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
@@ -25,9 +24,9 @@ const footerLinks = {
 
 const socialLinks = [
   { name: "Twitter", href: "https://twitter.com/busynotify", icon: Twitter },
-  { name: "GitHub", href: "https://github.com/busynotify", icon: Github },
+  { name: "GitHub", href: "https://github.com/travel-dev82/busynotify.in", icon: Github },
   { name: "LinkedIn", href: "https://linkedin.com/company/busynotify", icon: Linkedin },
-  { name: "Email", href: "mailto:hello@busynotify.in", icon: Mail },
+  { name: "Email", href: "mailto:support@busynotify.in", icon: Mail },
 ];
 
 export function Footer() {
@@ -52,7 +51,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
-              AI-powered notification infrastructure. Never miss a critical business moment.
+              BUSY Software Automation Platform for Indian businesses. WhatsApp, Payment Reminders, Reports & APIs.
             </p>
             
             {/* Social Links */}
