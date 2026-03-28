@@ -430,3 +430,61 @@ export const googleSheetSchemas = [
   googleSheetServiceSchema,
   googleSheetBreadcrumbSchema,
 ];
+
+// Custom APIs Schemas
+export const customAPIsServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Custom APIs for Busy Accounting Software",
+  "serviceType": "API Integration",
+  "description": "RESTful API access to Busy Accounting Software data. Free endpoints for customers, bills, products, and ledgers. Custom query development for specific business integration needs.",
+  "url": "https://busynotify.in/solutions/custom-apis",
+  "provider": {
+    "@type": "Organization",
+    "name": "BusyNotify"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "featureList": [
+    "Customer Information API",
+    "Bill-by-Bill Information API",
+    "Product Information API",
+    "Ledger Data API",
+    "Custom Query Development",
+    "RESTful Architecture",
+    "Token Authentication",
+    "API Documentation"
+  ]
+};
+
+export const customAPIsBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://busynotify.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Solutions",
+      "item": "https://busynotify.in/solutions"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Custom APIs",
+      "item": "https://busynotify.in/solutions/custom-apis"
+    }
+  ]
+};
+
+export const customAPIsSchemas = [
+  customAPIsServiceSchema,
+  customAPIsBreadcrumbSchema,
+];

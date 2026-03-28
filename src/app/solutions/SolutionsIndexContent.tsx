@@ -17,7 +17,8 @@ import {
   Truck,
   Map,
   CreditCard,
-  FileSpreadsheet
+  FileSpreadsheet,
+  Code
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -133,6 +134,22 @@ const solutions = [
     ],
     popular: false,
     badge: "Data Integration",
+  },
+  {
+    id: "custom-apis",
+    title: "Custom APIs",
+    shortTitle: "API Integration",
+    description: "RESTful APIs to access Busy Software data programmatically. Free endpoints for customers, bills, products, ledgers. Custom query development for specific integration needs.",
+    icon: Code,
+    features: [
+      "Customer API",
+      "Bill-by-Bill API",
+      "Product API",
+      "Ledger API",
+      "Custom Queries",
+    ],
+    popular: false,
+    badge: "For Developers",
   },
 ];
 
