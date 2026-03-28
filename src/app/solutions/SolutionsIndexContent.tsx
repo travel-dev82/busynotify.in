@@ -783,7 +783,7 @@ export function SolutionsIndexContent() {
 
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="glow-teal group" asChild>
-                <Link href="/#">
+                <Link href="/contact">
                   Contact Sales
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>

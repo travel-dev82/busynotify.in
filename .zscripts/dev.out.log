@@ -2753,3 +2753,11 @@ Import trace:
  GET /contact 200 in 56ms (compile: 42ms, render: 14ms)
  GET /site.webmanifest 404 in 62ms (compile: 38ms, render: 24ms)
 ✓ Compiled in 139ms
+ GET / 200 in 286ms (compile: 45ms, render: 241ms)
+✓ Compiled in 147ms
+ GET /contact 200 in 65ms (compile: 44ms, render: 20ms)
+✓ Compiled in 121ms
+ GET / 200 in 64ms (compile: 48ms, render: 16ms)
+ GET / 200 in 14ms (compile: 2ms, render: 12ms)
+ GET /pricing 200 in 74ms (compile: 48ms, render: 26ms)
+✓ Compiled in 123ms

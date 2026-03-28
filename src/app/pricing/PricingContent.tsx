@@ -204,7 +204,7 @@ export function PricingContent() {
                   variant={plan.popular ? "default" : "outline"}
                   asChild
                 >
-                  <Link href="/#">{plan.cta}</Link>
+                  <Link href="/contact">{plan.cta}</Link>
                 </Button>
               </motion.div>
             ))}
@@ -229,10 +229,10 @@ export function PricingContent() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" variant="outline" asChild>
-                <Link href="/#">Contact Sales</Link>
+                <Link href="/contact">Contact Sales</Link>
               </Button>
               <Button size="lg" variant="ghost" asChild>
-                <Link href="/#">View Enterprise Features</Link>
+                <Link href="/solutions">View Solutions</Link>
               </Button>
             </div>
           </motion.div>

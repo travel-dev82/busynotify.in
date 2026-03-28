@@ -106,7 +106,7 @@ export function BlogPostContent({ post }: Props) {
             Start sending intelligent notifications today.
           </p>
           <Button className="mt-6 glow-teal" asChild>
-            <Link href="/#">Get Started Free</Link>
+            <Link href="/pricing">Start Free Demo</Link>
           </Button>
         </div>
       </section>

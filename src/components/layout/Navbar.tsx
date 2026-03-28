@@ -147,10 +147,10 @@ export function Navbar() {
                 </Button>
               )}
               <Button variant="ghost" size="sm" asChild>
-                <Link href="/#">Sign In</Link>
+                <Link href="/contact">Contact Sales</Link>
               </Button>
               <Button size="sm" className="glow-teal" asChild>
-                <Link href="/#">Get Started Free</Link>
+                <Link href="/pricing">Start Free Demo</Link>
               </Button>
             </div>
 
@@ -239,10 +239,10 @@ export function Navbar() {
               
               <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-border space-y-3">
                 <Button variant="outline" className="w-full" asChild>
-                  <Link href="/#">Sign In</Link>
+                  <Link href="/contact">Contact Sales</Link>
                 </Button>
                 <Button className="w-full glow-teal" asChild>
-                  <Link href="/#">Get Started Free</Link>
+                  <Link href="/pricing">Start Free Demo</Link>
                 </Button>
               </div>
             </motion.div>
