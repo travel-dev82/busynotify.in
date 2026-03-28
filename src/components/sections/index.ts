@@ -7,3 +7,6 @@ export { Integrations } from "./Integrations";
 export { Testimonials } from "./Testimonials";
 export { FAQ } from "./FAQ";
 export { CTA } from "./CTA";
+export { WhatWeDo } from "./WhatWeDo";
+export { WhoIsThisFor } from "./WhoIsThisFor";
+export { SEOFooter } from "./SEOFooter";

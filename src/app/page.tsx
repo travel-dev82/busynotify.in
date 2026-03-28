@@ -4,11 +4,14 @@ import {
   Hero,
   SocialProof,
   ProblemSolution,
+  WhatWeDo,
   Features,
   HowItWorks,
+  WhoIsThisFor,
   Integrations,
   FAQ,
   CTA,
+  SEOFooter,
 } from "@/components/sections";
 
 export default function Home() {
@@ -20,11 +23,14 @@ export default function Home() {
         <Hero />
         <SocialProof />
         <ProblemSolution />
+        <WhatWeDo />
         <Features />
         <HowItWorks />
+        <WhoIsThisFor />
         <Integrations />
         <FAQ />
         <CTA />
+        <SEOFooter />
       </div>
       
       <Footer />

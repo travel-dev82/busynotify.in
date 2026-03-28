@@ -4,32 +4,40 @@ import { Footer } from "@/components/layout/Footer";
 import { SolutionsIndexContent } from "./SolutionsIndexContent";
 
 export const metadata: Metadata = {
-  title: "Solutions | AI-Powered Business Automation - BusyNotify",
+  title: "BUSY Software Automation Solutions | WhatsApp, Reporting, API & Integration - BusyNotify",
   description:
-    "Explore BusyNotify's AI-powered solutions for Indian businesses. From Busy Accounting Software chatbots to ERP automation, we help you automate customer queries and boost productivity.",
+    "Explore BUSY Accounting Software automation tools including WhatsApp integration, payment reminders, reporting dashboards, APIs, and Google Sheets sync for Indian businesses. Built for distributors, wholesalers, and manufacturers.",
   keywords: [
-    "Business Automation Solutions India",
-    "ERP Chatbot Solutions",
-    "Accounting Software Automation",
-    "Customer Query Automation",
-    "WhatsApp Business Solutions",
-    "Telegram Bot for Business",
-    "AI Chatbot Solutions India",
+    "BUSY Software Automation",
+    "BUSY WhatsApp Integration",
+    "BUSY Payment Reminder System",
+    "BUSY Reporting Dashboard",
+    "BUSY API Integration",
+    "BUSY Google Sheets Integration",
+    "BUSY ERP Automation",
+    "BUSY Accounting Software Tools",
+    "BUSY Software Integration",
+    "BUSY CRM Integration",
+    "BUSY Data Export",
+    "BUSY Chatbot",
+    "BUSY Customer Portal",
+    "Indian Business Automation",
+    "MSME Accounting Automation",
   ],
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://busynotify.in/solutions",
     siteName: "BusyNotify",
-    title: "Solutions | AI-Powered Business Automation - BusyNotify",
+    title: "BUSY Software Automation Solutions | WhatsApp, Reporting, API & Integration",
     description:
-      "Explore BusyNotify's AI-powered solutions for Indian businesses. Automate customer queries and boost productivity.",
+      "Explore BUSY Accounting Software automation tools including WhatsApp integration, payment reminders, reporting dashboards, APIs, and Google Sheets sync for Indian businesses.",
     images: [
       {
         url: "/og/solutions.png",
         width: 1200,
         height: 630,
-        alt: "BusyNotify Solutions - AI-Powered Business Automation",
+        alt: "BusyNotify Solutions - BUSY Software Automation for Indian Businesses",
       },
     ],
   },

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Play, Bot, MessageCircle, Bell, CheckCircle2, Zap, LayoutDashboard } from "lucide-react";
+import { ArrowRight, Bot, MessageCircle, Bell, CheckCircle2, Zap, LayoutDashboard, Settings, Database, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -49,8 +49,8 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card mb-8"
           >
-            <Bot className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Built for Busy Accounting Software</span>
+            <Settings className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Automation Platform for BUSY Accounting Software</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -60,9 +60,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight"
           >
-            Automate Your{" "}
+            Automate{" "}
             <span className="relative">
-              <span className="gradient-text">Busy Software</span>
+              <span className="gradient-text">BUSY Accounting Software</span>
               <motion.span
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-green-500 rounded-full"
                 initial={{ scaleX: 0 }}
@@ -70,7 +70,7 @@ export function Hero() {
                 transition={{ duration: 0.8, delay: 0.5 }}
               />
             </span>{" "}
-            Workflow
+            with WhatsApp, Payment Reminders & Reports
           </motion.h1>
 
           {/* Subheadline */}
@@ -78,11 +78,24 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
-            WhatsApp integration, AI chatbot, automated reminders, reporting dashboards, and more. 
-            <span className="text-foreground font-medium"> Built specifically for Indian businesses</span> using Busy Accounting Software.
+            <span className="text-foreground font-medium">WhatsApp integration, payment reminders, reporting dashboards, Google Sheets sync, and API integrations.</span> Built specifically for Indian businesses using BUSY Software to improve collections, reporting, and operations.
           </motion.p>
+
+          {/* Key Features */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-6 flex flex-wrap justify-center gap-3"
+          >
+            {["WhatsApp Integration", "Payment Reminders", "Reporting Dashboards", "API Integration", "Google Sheets Sync"].map((feature) => (
+              <span key={feature} className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full">
+                {feature}
+              </span>
+            ))}
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
@@ -113,7 +126,7 @@ export function Hero() {
           >
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-500" />
-              <span>Works with Busy 17/18/21</span>
+              <span>Works with BUSY 17/18/21</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-500" />
@@ -150,7 +163,7 @@ export function Hero() {
                   <span className="text-sm text-muted-foreground ml-2">BusyNotify Dashboard</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <span className="px-2 py-0.5 rounded bg-green-500/20 text-green-400">Connected to Busy</span>
+                  <span className="px-2 py-0.5 rounded bg-green-500/20 text-green-400">Connected to BUSY</span>
                   <Zap className="w-3 h-3 text-primary" />
                 </div>
               </div>
@@ -159,32 +172,32 @@ export function Hero() {
               <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Stats */}
                 <div className="glass-subtle rounded-xl p-4">
-                  <div className="text-sm text-muted-foreground mb-1">Messages Sent Today</div>
+                  <div className="text-sm text-muted-foreground mb-1">WhatsApp Messages Sent</div>
                   <div className="text-2xl font-bold">1,247</div>
                   <div className="text-xs text-green-400 mt-1">↑ 18% from yesterday</div>
                 </div>
                 
                 <div className="glass-subtle rounded-xl p-4">
-                  <div className="text-sm text-muted-foreground mb-1">Active Customers</div>
+                  <div className="text-sm text-muted-foreground mb-1">Active BUSY Customers</div>
                   <div className="text-2xl font-bold">892</div>
                   <div className="text-xs text-primary mt-1">On WhatsApp & Telegram</div>
                 </div>
                 
                 <div className="glass-subtle rounded-xl p-4">
-                  <div className="text-sm text-muted-foreground mb-1">Vouchers Auto-Sent</div>
+                  <div className="text-sm text-muted-foreground mb-1">Invoices Auto-Sent</div>
                   <div className="text-2xl font-bold">456</div>
-                  <div className="text-xs text-accent mt-1">Invoices, Orders, Receipts</div>
+                  <div className="text-xs text-accent mt-1">From BUSY Software</div>
                 </div>
               </div>
               
               {/* Solution Icons */}
               <div className="px-6 pb-6">
                 <div className="glass-subtle rounded-xl p-4">
-                  <div className="text-sm text-muted-foreground mb-3">Active Solutions</div>
+                  <div className="text-sm text-muted-foreground mb-3">Active BUSY Automation Solutions</div>
                   <div className="flex flex-wrap gap-3">
                     <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
                       <Bot className="w-4 h-4 text-primary" />
-                      <span className="text-sm">Chatbot</span>
+                      <span className="text-sm">BUSY Chatbot</span>
                     </div>
                     <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
                       <MessageCircle className="w-4 h-4 text-green-400" />
@@ -192,11 +205,15 @@ export function Hero() {
                     </div>
                     <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
                       <Bell className="w-4 h-4 text-yellow-400" />
-                      <span className="text-sm">Reminders</span>
+                      <span className="text-sm">Payment Reminders</span>
                     </div>
                     <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
                       <LayoutDashboard className="w-4 h-4 text-purple-400" />
                       <span className="text-sm">Reports</span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
+                      <Database className="w-4 h-4 text-blue-400" />
+                      <span className="text-sm">API</span>
                     </div>
                   </div>
                 </div>
@@ -213,7 +230,7 @@ export function Hero() {
                 <MessageCircle className="w-4 h-4 text-green-400" />
                 <span className="text-sm font-medium">WhatsApp</span>
               </div>
-              <p className="text-xs text-muted-foreground mt-1">Invoice sent automatically</p>
+              <p className="text-xs text-muted-foreground mt-1">BUSY Invoice sent automatically</p>
             </motion.div>
             
             <motion.div
@@ -222,10 +239,10 @@ export function Hero() {
               className="absolute -left-4 bottom-1/3 glass-card rounded-lg p-3 shadow-xl hidden lg:block"
             >
               <div className="flex items-center gap-2">
-                <Bot className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium">Chatbot</span>
+                <Phone className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium">Payment Reminder</span>
               </div>
-              <p className="text-xs text-muted-foreground mt-1">Balance inquiry answered</p>
+              <p className="text-xs text-muted-foreground mt-1">Outstanding ₹15,000 reminder sent</p>
             </motion.div>
           </div>
         </motion.div>
