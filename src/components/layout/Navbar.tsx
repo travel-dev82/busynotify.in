@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useSyncExternalStore } from "react";
+import { useState, useEffect, useSyncExternalStore, useId } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bell, Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,10 +12,10 @@ import { useTheme } from "next-themes";
 const navigation = [
   { name: "Solutions", href: "/solutions" },
   { name: "Blog", href: "/blog" },
-  { name: "Pricing", href: "#pricing" },
+  { name: "Pricing", href: "/pricing" },
 ];
 
-// Custom hook for mounted state to avoid lint error
+// Custom hook for mounted state
 function useMounted() {
   return useSyncExternalStore(
     () => () => {},
@@ -23,20 +24,51 @@ function useMounted() {
   );
 }
 
+// Custom hook for mobile menu state that auto-closes on navigation
+function useMobileMenuState(pathname: string) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  
+  // This pattern is recommended by React team for derived state
+  if (pathname !== prevPathname) {
+    setIsOpen(false);
+    setPrevPathname(pathname);
+  }
+  
+  return [isOpen, setIsOpen] as const;
+}
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useMobileMenuState(pathname);
   const { theme, setTheme } = useTheme();
   const mounted = useMounted();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+      
+      // Set scrolled state for styling
+      setIsScrolled(currentScrollY > 20);
+      
+      // Smart sticky behavior
+      if (currentScrollY < lastScrollY) {
+        // Scrolling up - show navbar
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down & past threshold - hide navbar
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -45,9 +77,11 @@ export function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.3 }}
+        initial={{ y: 0 }}
+        animate={{ 
+          y: isVisible ? 0 : -100,
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled ? "py-3" : "py-5"
@@ -82,7 +116,12 @@ export function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5"
+                  className={cn(
+                    "px-4 py-2 text-sm font-medium transition-colors rounded-lg",
+                    pathname === item.href 
+                      ? "text-foreground bg-white/5" 
+                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                  )}
                 >
                   {item.name}
                 </Link>
@@ -184,7 +223,12 @@ export function Navbar() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block px-4 py-3 text-lg font-medium text-foreground hover:bg-white/5 rounded-lg transition-colors"
+                    className={cn(
+                      "block px-4 py-3 text-lg font-medium rounded-lg transition-colors",
+                      pathname === item.href 
+                        ? "text-foreground bg-white/5" 
+                        : "text-muted-foreground hover:bg-white/5"
+                    )}
                   >
                     {item.name}
                   </Link>

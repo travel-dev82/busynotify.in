@@ -7,7 +7,6 @@ import {
   Features,
   HowItWorks,
   Integrations,
-  Pricing,
   Testimonials,
   FAQ,
   CTA,
@@ -25,7 +24,6 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <Integrations />
-        <Pricing />
         <Testimonials />
         <FAQ />
         <CTA />

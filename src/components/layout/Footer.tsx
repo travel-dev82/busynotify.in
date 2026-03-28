@@ -6,7 +6,7 @@ import { Bell, Twitter, Github, Linkedin, Mail } from "lucide-react";
 const footerLinks = {
   product: [
     { name: "Solutions", href: "/solutions" },
-    { name: "Pricing", href: "#pricing" },
+    { name: "Pricing", href: "/pricing" },
     { name: "Integrations", href: "/solutions#integrations" },
     { name: "API Docs", href: "#" },
   ],
