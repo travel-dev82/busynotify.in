@@ -5,10 +5,24 @@ import { SolutionsContent } from "./SolutionsContent";
 import { allSchemas } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Busy Accounting Software Chatbot | AI-Powered ERP Chatbot India - BusyNotify",
+  title: "Busy Software WhatsApp Integration | Send Invoices & Ledger via Chatbot India - BusyNotify",
   description:
-    "Automate your Busy Accounting Software with AI chatbot. 24/7 customer support for balance inquiries, ledgers, invoices, payment receipts & more. Best ERP chatbot solution for Indian businesses using Busy 17, 18, 21.",
+    "Automate Busy Accounting Software with WhatsApp chatbot. Send invoices, ledger, balance & receipts instantly. Best Busy ERP automation solution for Indian businesses. Works with Busy 17, 18, 21.",
   keywords: [
+    "busy software whatsapp integration",
+    "busy whatsapp api",
+    "busy accounting software automation",
+    "busy erp chatbot",
+    "busy software customer portal",
+    "busy software api integration",
+    "send invoice on whatsapp busy software",
+    "busy software ledger on whatsapp",
+    "accounting chatbot for whatsapp india",
+    "whatsapp bot for accounting software india",
+    "how to send invoice from busy software to whatsapp",
+    "how to automate busy accounting queries",
+    "busy software customer self service system",
+    "busy accounting software chatbot india",
     "Busy Accounting Software Chatbot",
     "Busy ERP Chatbot",
     "Busy Software Chatbot India",
@@ -28,6 +42,9 @@ export const metadata: Metadata = {
     "Telegram Bot for Busy ERP",
     "Balance Inquiry Chatbot",
     "Pending Order Status Chatbot",
+    "busy accounting software whatsapp",
+    "busy software automated messaging",
+    "busy erp whatsapp integration india",
   ],
   authors: [{ name: "BusyNotify Team" }],
   creator: "BusyNotify",
@@ -48,9 +65,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://busynotify.in/solutions/busy-accounting-software-chatbot",
     siteName: "BusyNotify",
-    title: "Busy Accounting Software Chatbot | AI-Powered ERP Chatbot India",
+    title: "Busy Software WhatsApp Integration | Send Invoices & Ledger via Chatbot India",
     description:
-      "Automate your Busy Accounting Software with AI chatbot. 24/7 customer support for balance inquiries, ledgers, invoices, payment receipts & more. Works with Busy 17, 18, 21.",
+      "Automate Busy Accounting Software with WhatsApp chatbot. Send invoices, ledger, balance & receipts instantly to customers. Best Busy ERP automation solution.",
     images: [
       {
         url: "/og/busy-erp-chatbot.png",
@@ -62,9 +79,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Busy Accounting Software Chatbot | AI-Powered ERP Chatbot",
+    title: "Busy Software WhatsApp Integration | Send Invoices & Ledger via Chatbot",
     description:
-      "Automate your Busy Accounting Software with AI chatbot. 24/7 customer support for balance inquiries, ledgers, invoices & more.",
+      "Automate Busy Accounting Software with WhatsApp chatbot. Send invoices, ledger, balance & receipts instantly to customers.",
     images: ["/og/busy-erp-chatbot.png"],
     creator: "@busynotify",
   },
