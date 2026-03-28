@@ -18,7 +18,8 @@ import {
   Map,
   CreditCard,
   FileSpreadsheet,
-  Code
+  Code,
+  MessageCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -150,6 +151,22 @@ const solutions = [
     ],
     popular: false,
     badge: "For Developers",
+  },
+  {
+    id: "whatsapp-integration",
+    title: "WhatsApp Integration",
+    shortTitle: "WhatsApp",
+    description: "Automatically send all vouchers from Busy Software to customers via WhatsApp. Invoices, quotations, orders, receipts, credit notes - all delivered instantly with PDF attachments.",
+    icon: MessageCircle,
+    features: [
+      "All Voucher Types",
+      "Auto PDF Delivery",
+      "Reports on Demand",
+      "Chatbot Integration",
+      "Delivery Tracking",
+    ],
+    popular: true,
+    badge: "Most Popular",
   },
 ];
 

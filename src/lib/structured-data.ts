@@ -488,3 +488,64 @@ export const customAPIsSchemas = [
   customAPIsServiceSchema,
   customAPIsBreadcrumbSchema,
 ];
+
+// WhatsApp Integration Schemas
+export const whatsappIntegrationServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "WhatsApp Integration for Busy Accounting Software",
+  "serviceType": "Messaging Integration",
+  "description": "Automatically send vouchers from Busy Accounting Software to customers via WhatsApp. All voucher types supported - invoices, quotations, orders, receipts, credit notes, debit notes, and more. Reports available on-demand.",
+  "url": "https://busynotify.in/solutions/whatsapp-integration",
+  "provider": {
+    "@type": "Organization",
+    "name": "BusyNotify"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "featureList": [
+    "Sale Invoice WhatsApp",
+    "Sale Quotation WhatsApp",
+    "Sale Order WhatsApp",
+    "Purchase Order WhatsApp",
+    "Payment Receipt WhatsApp",
+    "Credit Note WhatsApp",
+    "Debit Note WhatsApp",
+    "Ledger Report WhatsApp",
+    "Bill-by-Bill Statement WhatsApp",
+    "Stock Report WhatsApp",
+    "WhatsApp Business API"
+  ]
+};
+
+export const whatsappIntegrationBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://busynotify.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Solutions",
+      "item": "https://busynotify.in/solutions"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "WhatsApp Integration",
+      "item": "https://busynotify.in/solutions/whatsapp-integration"
+    }
+  ]
+};
+
+export const whatsappIntegrationSchemas = [
+  whatsappIntegrationServiceSchema,
+  whatsappIntegrationBreadcrumbSchema,
+];
