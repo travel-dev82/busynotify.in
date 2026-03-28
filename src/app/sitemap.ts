@@ -15,13 +15,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/solutions`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/solutions/busy-accounting-software-chatbot`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
       priority: 0.95, // High priority for main solution page
     },
     {
       url: `${baseUrl}/pricing`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
-      priority: 0.9,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/blog`,

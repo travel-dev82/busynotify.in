@@ -53,6 +53,7 @@ export const serviceSchema = {
   "name": "Busy Accounting Software Chatbot Service",
   "serviceType": "ERP Chatbot Integration",
   "description": "24/7 AI chatbot service for Busy Accounting Software users. Automate customer queries and document delivery.",
+  "url": "https://busynotify.in/solutions/busy-accounting-software-chatbot",
   "provider": {
     "@type": "Organization",
     "name": "BusyNotify"
@@ -106,8 +107,14 @@ export const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Busy ERP Chatbot Solutions",
+      "name": "Solutions",
       "item": "https://busynotify.in/solutions"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Busy Accounting Software Chatbot",
+      "item": "https://busynotify.in/solutions/busy-accounting-software-chatbot"
     }
   ]
 };

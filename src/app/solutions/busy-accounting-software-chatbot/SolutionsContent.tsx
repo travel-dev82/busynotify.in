@@ -195,7 +195,9 @@ export function SolutionsContent() {
                 <ol className="flex items-center gap-2">
                   <li><Link href="/" className="hover:text-primary">Home</Link></li>
                   <li><ChevronRight className="w-4 h-4" /></li>
-                  <li className="text-foreground">Busy ERP Chatbot</li>
+                  <li><Link href="/solutions" className="hover:text-primary">Solutions</Link></li>
+                  <li><ChevronRight className="w-4 h-4" /></li>
+                  <li className="text-foreground">Busy Accounting Chatbot</li>
                 </ol>
               </nav>
 
