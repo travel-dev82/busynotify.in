@@ -11,9 +11,10 @@ const footerLinks = {
     { name: "API Docs", href: "/solutions/custom-apis" },
   ],
   company: [
+    { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
-  { name: "Support", href: "/contact" },
+    { name: "Support", href: "/contact" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
