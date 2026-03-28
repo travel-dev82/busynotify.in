@@ -6,13 +6,14 @@ import { LegalContent } from "../LegalContent";
 export const metadata: Metadata = {
   title: "Privacy Policy | BusyNotify - BUSY Software Automation Platform",
   description:
-    "Privacy Policy for BusyNotify. Learn how we collect, use, store, and protect your information when you use our BUSY Software automation services.",
+    "Privacy Policy for BusyNotify (M/S WILFORD TECHNOLOGY). Learn how we collect, use, store, and protect your information when you use our BUSY Software automation services.",
   keywords: [
     "BusyNotify Privacy Policy",
     "BUSY Software Data Privacy",
     "BUSY Automation Privacy",
     "Indian Business Data Protection",
     "MSME Data Security",
+    "M/S WILFORD TECHNOLOGY Privacy",
   ],
   alternates: {
     canonical: "https://busynotify.in/privacy",
@@ -36,7 +37,7 @@ export default function PrivacyPage() {
 const privacyContent = [
   {
     heading: "Introduction",
-    content: `BusyNotify ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and protect your information when you use our services.`,
+    content: `BusyNotify (operated by **M/S WILFORD TECHNOLOGY**, a proprietorship) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and protect your information when you use our services.`,
   },
   {
     heading: "1. Information We Collect",
@@ -147,14 +148,22 @@ You can disable cookies through your browser settings.`,
     heading: "11. Contact Us",
     content: `If you have any questions regarding this Privacy Policy, please contact:
 
-**BusyNotify**
-📧 Email: privacy@busynotify.in
+**M/S WILFORD TECHNOLOGY**
+(Operating BusyNotify)
+
+📧 Support Email: support@busynotify.in
+📧 Privacy Email: privacy@busynotify.in
 📞 Phone: +91 96698 23388
-📍 Address: 131, C21 Mall, Ujjain, Madhya Pradesh, India`,
+📍 Address: Madhya Pradesh Udyogik Vikas Nigam, GROUND, C21, RES-COMM, Indore Road Stadium Yojna, Nanakheda, Ujjain, Madhya Pradesh, 456010, India`,
   },
   {
     heading: "12. Compliance",
-    content: `This Privacy Policy is designed to comply with applicable data protection laws in India and general global best practices.
+    content: `This business operates under the **Madhya Pradesh Goods and Services Tax Act, 2017**.
+
+**GST Registration Number:** 23DBQPA9343Q1Z1
+**Date of Liability:** 12/03/2020
+
+This Privacy Policy is designed to comply with applicable data protection laws in India and general global best practices.
 
 By using BusyNotify, you agree to the terms outlined in this Privacy Policy.`,
   },

@@ -6,13 +6,14 @@ import { LegalContent } from "../LegalContent";
 export const metadata: Metadata = {
   title: "Terms of Service | BusyNotify - BUSY Software Automation Platform",
   description:
-    "Terms of Service for BusyNotify. Read the terms and conditions governing your use of our BUSY Software automation services including WhatsApp integration, payment reminders, and API access.",
+    "Terms of Service for BusyNotify (M/S WILFORD TECHNOLOGY). Read the terms and conditions governing your use of our BUSY Software automation services including WhatsApp integration, payment reminders, and API access.",
   keywords: [
     "BusyNotify Terms of Service",
     "BUSY Software Terms",
     "BUSY Automation Legal",
     "Indian SaaS Terms",
     "MSME Service Agreement",
+    "M/S WILFORD TECHNOLOGY Terms",
   ],
   alternates: {
     canonical: "https://busynotify.in/terms",
@@ -36,7 +37,7 @@ export default function TermsPage() {
 const termsContent = [
   {
     heading: "Introduction",
-    content: `Welcome to BusyNotify. These Terms of Service ("Terms") govern your access to and use of our services, including all features, tools, and integrations provided by BusyNotify.
+    content: `Welcome to BusyNotify (operated by **M/S WILFORD TECHNOLOGY**, a proprietorship). These Terms of Service ("Terms") govern your access to and use of our services, including all features, tools, and integrations provided by BusyNotify.
 
 By using our services, you agree to these Terms. If you do not agree, please do not use BusyNotify.`,
   },
@@ -115,7 +116,7 @@ Maintenance or updates may temporarily affect service availability.`,
   },
   {
     heading: "8. Intellectual Property",
-    content: `All content, software, and technology used in BusyNotify are the property of BusyNotify.
+    content: `All content, software, and technology used in BusyNotify are the property of M/S WILFORD TECHNOLOGY.
 
 You may not:
 • Copy, modify, or distribute our services
@@ -148,17 +149,31 @@ You may also discontinue use of the service at any time.`,
 Continued use of the service means you accept the revised Terms.`,
   },
   {
-    heading: "12. Governing Law",
-    content: `These Terms are governed by the laws of **India**. Any disputes shall be subject to the jurisdiction of courts located in **Madhya Pradesh, India**.`,
+    heading: "12. Governing Law & Jurisdiction",
+    content: `These Terms are governed by the laws of **India**.
+
+All disputes shall be subject to the jurisdiction of courts in **Ujjain, Madhya Pradesh, India**.
+
+This business operates under the **Madhya Pradesh Goods and Services Tax Act, 2017**.`,
   },
   {
-    heading: "13. Contact Us",
+    heading: "13. Business Information",
+    content: `**Trade Name:** M/S WILFORD TECHNOLOGY
+**Business Type:** Proprietorship
+**GST Registration Number:** 23DBQPA9343Q1Z1
+**Date of Liability:** 12/03/2020`,
+  },
+  {
+    heading: "14. Contact Us",
     content: `If you have any questions about these Terms, please contact:
 
-**BusyNotify**
-📧 Email: support@busynotify.in
+**M/S WILFORD TECHNOLOGY**
+(Operating BusyNotify)
+
+📧 Support Email: support@busynotify.in
+📧 Privacy Email: privacy@busynotify.in
 📞 Phone: +91 96698 23388
-📍 Address: 131, C21 Mall, Ujjain, Madhya Pradesh, India
+📍 Address: Madhya Pradesh Udyogik Vikas Nigam, GROUND, C21, RES-COMM, Indore Road Stadium Yojna, Nanakheda, Ujjain, Madhya Pradesh, 456010, India
 
 ---
 

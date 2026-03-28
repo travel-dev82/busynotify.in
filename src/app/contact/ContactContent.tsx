@@ -24,8 +24,13 @@ import { useState } from "react";
 const contactInfo = [
   {
     icon: MapPin,
-    title: "Office Address",
-    details: ["BusyNotify", "131, C21 Mall", "Ujjain, Madhya Pradesh, India"],
+    title: "Registered Office",
+    details: [
+      "M/S WILFORD TECHNOLOGY",
+      "Madhya Pradesh Udyogik Vikas Nigam, GROUND,",
+      "C21, RES-COMM, Indore Road Stadium Yojna,",
+      "Nanakheda, Ujjain, Madhya Pradesh, 456010, India"
+    ],
     color: "text-primary",
     bgColor: "bg-primary/10",
   },
@@ -47,7 +52,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Support",
-    details: ["For queries, demos, or technical support", "support@busynotify.in"],
+    details: ["Support: support@busynotify.in", "Privacy: privacy@busynotify.in"],
     link: "mailto:support@busynotify.in",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
@@ -192,8 +197,37 @@ export function ContactContent() {
         </div>
       </section>
 
+      {/* Business Information Section */}
+      <section className="py-8 border-y border-border bg-card/30">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h3 className="text-lg font-semibold mb-3">Business Information</h3>
+            <div className="glass-card rounded-xl p-6 inline-block">
+              <p className="text-sm text-muted-foreground">
+                <strong>Trade Name:</strong> M/S WILFORD TECHNOLOGY
+              </p>
+              <p className="text-sm text-muted-foreground mt-1">
+                <strong>Business Type:</strong> Proprietorship
+              </p>
+              <p className="text-sm text-muted-foreground mt-1">
+                <strong>GST Number:</strong> 23DBQPA9343Q1Z1
+              </p>
+              <p className="text-xs text-muted-foreground mt-3">
+                Operating under the Madhya Pradesh Goods and Services Tax Act, 2017
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Support Hours & Services */}
-      <section className="py-12 border-y border-border bg-card/30">
+      <section className="py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Support Hours */}
@@ -263,7 +297,7 @@ export function ContactContent() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16">
+      <section className="py-16 border-y border-border bg-card/30">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -402,7 +436,7 @@ export function ContactContent() {
       </section>
 
       {/* Quick Contact CTA */}
-      <section className="py-12 border-t border-border bg-card/30">
+      <section className="py-12">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-xl font-bold mb-4">Prefer to Talk Directly?</h3>
           <p className="text-muted-foreground mb-6">

@@ -54,6 +54,9 @@ export function Footer() {
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               BUSY Software Automation Platform for Indian businesses. WhatsApp, Payment Reminders, Reports & APIs.
             </p>
+            <p className="mt-2 text-xs text-muted-foreground">
+              A product by <strong>M/S WILFORD TECHNOLOGY</strong>
+            </p>
             
             {/* Social Links */}
             <div className="mt-6 flex items-center gap-3">
@@ -126,11 +129,16 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} <strong>M/S WILFORD TECHNOLOGY</strong>. All rights reserved.
+            </p>
+            <p className="text-xs text-muted-foreground mt-1">
+              GST: 23DBQPA9343Q1Z1 | Ujjain, Madhya Pradesh, India
+            </p>
+          </div>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} BusyNotify. Made in India 🇮🇳
-          </p>
-          <p className="text-sm text-muted-foreground">
-            All rights reserved.
+            Made in India 🇮🇳
           </p>
         </div>
       </div>

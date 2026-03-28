@@ -6,13 +6,14 @@ import { LegalContent } from "../LegalContent";
 export const metadata: Metadata = {
   title: "Cookie Policy | BusyNotify - BUSY Software Automation Platform",
   description:
-    "Cookie Policy for BusyNotify. Learn how we use cookies and similar technologies on our BUSY Software automation platform.",
+    "Cookie Policy for BusyNotify (M/S WILFORD TECHNOLOGY). Learn how we use cookies and similar technologies on our BUSY Software automation platform.",
   keywords: [
     "BusyNotify Cookie Policy",
     "BUSY Software Cookies",
     "Indian Website Cookies",
     "MSME Cookie Policy",
     "Website Privacy India",
+    "M/S WILFORD TECHNOLOGY Cookies",
   ],
   alternates: {
     canonical: "https://busynotify.in/cookies",
@@ -36,7 +37,7 @@ export default function CookiesPage() {
 const cookiesContent = [
   {
     heading: "Introduction",
-    content: `This Cookie Policy explains how BusyNotify ("we", "our", "us") uses cookies and similar technologies when you visit or use our website and services.`,
+    content: `This Cookie Policy explains how BusyNotify (operated by **M/S WILFORD TECHNOLOGY**, a proprietorship) uses cookies and similar technologies when you visit or use our website and services.`,
   },
   {
     heading: "1. What Are Cookies?",
@@ -127,10 +128,13 @@ Changes will be posted on this page with an updated "Last Updated" date.`,
     heading: "8. Contact Us",
     content: `If you have any questions about this Cookie Policy, please contact:
 
-**BusyNotify**
-📧 Email: privacy@busynotify.in
+**M/S WILFORD TECHNOLOGY**
+(Operating BusyNotify)
+
+📧 Support Email: support@busynotify.in
+📧 Privacy Email: privacy@busynotify.in
 📞 Phone: +91 96698 23388
-📍 Address: 131, C21 Mall, Ujjain, Madhya Pradesh, India
+📍 Address: Madhya Pradesh Udyogik Vikas Nigam, GROUND, C21, RES-COMM, Indore Road Stadium Yojna, Nanakheda, Ujjain, Madhya Pradesh, 456010, India
 
 ---
 
