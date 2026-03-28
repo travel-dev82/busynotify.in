@@ -7,7 +7,6 @@ import {
   Features,
   HowItWorks,
   Integrations,
-  Testimonials,
   FAQ,
   CTA,
 } from "@/components/sections";
@@ -24,7 +23,6 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <Integrations />
-        <Testimonials />
         <FAQ />
         <CTA />
       </div>

@@ -1,29 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const testimonials = [
   {
-    quote: "BusyNotify reduced our alert noise by 80%. Our engineers can finally focus on building instead of constantly context-switching.",
-    author: "Arjun Mehta",
-    role: "CTO",
-    company: "TechFlow",
-    avatar: "AM",
+    quote: "Our customers love getting invoices on WhatsApp instantly. Payment reminders have improved our collections by 40%. BusyNotify is essential for any Busy Software user.",
+    author: "Rajesh Agarwal",
+    role: "Owner",
+    company: "Agarwal Trading Co.",
+    avatar: "RA",
   },
   {
-    quote: "The AI-powered routing is a game-changer. Critical incidents now reach the right person immediately, every time.",
-    author: "Sneha Kapoor",
-    role: "DevOps Lead",
-    company: "ScaleUp",
-    avatar: "SK",
+    quote: "The chatbot handles 80% of customer balance inquiries automatically. My staff can now focus on actual work instead of answering the same questions all day.",
+    author: "Priya Sharma",
+    role: "Director",
+    company: "Sharma Distributors",
+    avatar: "PS",
   },
   {
-    quote: "Setup took 15 minutes. Within a week, our mean time to resolution dropped by 40%. Incredible ROI.",
-    author: "Rohan Gupta",
-    role: "VP Engineering",
-    company: "DataDriven",
-    avatar: "RG",
+    quote: "The reporting dashboard with salesman tracking has transformed how we manage our field team. We can see exactly what's happening across all territories.",
+    author: "Amit Patel",
+    role: "MD",
+    company: "Patel Industries",
+    avatar: "AP",
   },
 ];
 
@@ -42,8 +42,11 @@ export function Testimonials() {
         >
           <span className="label-accent">Testimonials</span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-            Loved by <span className="gradient-text">engineering teams</span>
+            Trusted by <span className="gradient-text">Indian businesses</span>
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            See what our customers say about BusyNotify
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

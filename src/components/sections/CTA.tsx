@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function CTA() {
@@ -18,17 +18,16 @@ export function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center"
+          className="text-center glass-card rounded-3xl p-8 md:p-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-            Start sending{" "}
-            <span className="gradient-text">smarter notifications</span>{" "}
-            today
+            Ready to automate your{" "}
+            <span className="gradient-text">Busy Software workflow</span>?
           </h2>
           
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Join 500+ teams who've transformed their alert management with BusyNotify. 
-            Setup in 5 minutes. No credit card needed.
+            Join hundreds of Indian businesses already using BusyNotify to automate 
+            customer communication, reminders, and reporting. Start your free 3-day demo today.
           </p>
 
           <motion.div
@@ -39,15 +38,14 @@ export function CTA() {
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button size="lg" className="glow-teal group" asChild>
-              <Link href="/#">
-                Create Free Account
+              <Link href="/pricing">
+                Start Free Demo
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="group" asChild>
-              <Link href="/#">
-                <Calendar className="mr-2 w-4 h-4 group-hover:scale-110 transition-transform" />
-                Book a Demo
+              <Link href="/solutions">
+                View All Solutions
               </Link>
             </Button>
           </motion.div>
@@ -61,22 +59,20 @@ export function CTA() {
             className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground"
           >
             <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span>Free forever tier</span>
+              <CheckCircle2 className="w-4 h-4 text-green-500" />
+              <span>Free 3-day demo</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
+              <CheckCircle2 className="w-4 h-4 text-green-500" />
               <span>No credit card required</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span>Setup in 5 minutes</span>
+              <CheckCircle2 className="w-4 h-4 text-green-500" />
+              <span>Setup in 24 hours</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-green-500" />
+              <span>Cancel anytime</span>
             </div>
           </motion.div>
         </motion.div>

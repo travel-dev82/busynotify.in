@@ -1,20 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MessageCircle, Send, FileSpreadsheet, Map, Bot, Database, Globe, Smartphone } from "lucide-react";
 
 const integrations = [
-  { name: "Slack", category: "Messaging" },
-  { name: "Teams", category: "Messaging" },
-  { name: "Discord", category: "Messaging" },
-  { name: "WhatsApp", category: "Messaging" },
-  { name: "Email", category: "Messaging" },
-  { name: "SMS", category: "Messaging" },
-  { name: "Zapier", category: "Automation" },
-  { name: "Webhooks", category: "Automation" },
-  { name: "Jira", category: "Project Mgmt" },
-  { name: "PagerDuty", category: "Incident" },
-  { name: "GitHub", category: "Dev Tools" },
-  { name: "Custom API", category: "Dev Tools" },
+  { name: "WhatsApp Business", icon: MessageCircle, color: "text-green-400" },
+  { name: "Telegram", icon: Send, color: "text-blue-400" },
+  { name: "Google Sheets", icon: FileSpreadsheet, color: "text-green-500" },
+  { name: "Google Maps", icon: Map, color: "text-red-400" },
+  { name: "Google Drive", icon: Database, color: "text-yellow-400" },
+  { name: "REST APIs", icon: Bot, color: "text-purple-400" },
+  { name: "Web Portal", icon: Globe, color: "text-primary" },
+  { name: "PWA App", icon: Smartphone, color: "text-orange-400" },
 ];
 
 export function Integrations() {
@@ -32,16 +29,16 @@ export function Integrations() {
         >
           <span className="label-accent">Integrations</span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-            Works with{" "}
-            <span className="gradient-text">what you already use</span>
+            Connects with{" "}
+            <span className="gradient-text">tools you already use</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Connect your entire stack. No rip-and-replace required.
+            Built-in integrations with popular platforms. Your customers get information where they prefer.
           </p>
         </motion.div>
 
         {/* Integration Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
           {integrations.map((integration, index) => (
             <motion.div
               key={integration.name}
@@ -52,24 +49,27 @@ export function Integrations() {
               className="group glass-card rounded-xl p-4 text-center hover:border-primary/30 transition-all duration-300 cursor-pointer"
             >
               <div className="w-10 h-10 mx-auto rounded-lg bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <span className="text-sm font-bold">{integration.name.charAt(0)}</span>
+                <integration.icon className={`w-5 h-5 ${integration.color}`} />
               </div>
-              <p className="text-sm font-medium">{integration.name}</p>
-              <p className="text-xs text-muted-foreground mt-1">{integration.category}</p>
+              <p className="text-xs font-medium">{integration.name}</p>
             </motion.div>
           ))}
         </div>
 
+        {/* Core Integration */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-8"
+          className="text-center mt-12"
         >
-          <p className="text-sm text-muted-foreground">
-            And <span className="text-foreground font-medium">40+ more</span> integrations available
-          </p>
+          <div className="inline-flex items-center gap-3 glass-card rounded-full px-6 py-3">
+            <Database className="w-5 h-5 text-primary" />
+            <span className="text-sm">
+              <span className="font-semibold">Core Integration:</span> Busy Accounting Software (17, 18, 21+)
+            </span>
+          </div>
         </motion.div>
       </div>
     </section>

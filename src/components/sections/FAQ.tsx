@@ -10,36 +10,36 @@ import {
 
 const faqs = [
   {
-    question: "How does BusyNotify differ from other notification services?",
-    answer: "Unlike traditional notification services that simply relay messages, BusyNotify uses AI to intelligently route, prioritize, and aggregate your alerts. We analyze patterns in your data to surface what matters and suppress what doesn't — reducing alert fatigue by up to 80%.",
+    question: "What is BusyNotify?",
+    answer: "BusyNotify is an automation platform built specifically for Busy Accounting Software users in India. We provide WhatsApp integration, AI chatbot, payment reminders, reporting dashboards, and more — all connected to your Busy Software database.",
   },
   {
-    question: "What integrations do you support?",
-    answer: "We support 40+ integrations including Slack, Microsoft Teams, Discord, WhatsApp, Email, SMS, PagerDuty, Jira, GitHub, Zapier, and custom webhooks. Our API-first approach means you can connect virtually any service.",
+    question: "Which Busy Software versions are supported?",
+    answer: "BusyNotify works with all major Busy Accounting Software versions including Busy 17, Busy 18, Busy 21, and the latest releases. We support both single-user and multi-user editions.",
   },
   {
-    question: "Is there a free tier?",
-    answer: "Yes! Our free tier includes 1,000 notifications per month, 3 integrations, and basic analytics. It's perfect for small projects, testing, or getting started with intelligent notifications.",
+    question: "How does the WhatsApp integration work?",
+    answer: "When you create any voucher in Busy (invoice, receipt, order, etc.), BusyNotify automatically sends it to your customer's WhatsApp within seconds. You can customize messages, include PDFs, and track delivery status.",
+  },
+  {
+    question: "What can the AI chatbot do?",
+    answer: "Our chatbot connects to your Busy Software and answers customer queries 24/7 via WhatsApp or Telegram. Customers can check balances, download ledgers, get invoices, check order status, and more — without calling your office.",
+  },
+  {
+    question: "Is my Busy Software data secure?",
+    answer: "Absolutely. We use enterprise-grade encryption and never store your accounting data on external servers. The system only reads data on-demand with proper authentication. We comply with Indian data protection guidelines.",
+  },
+  {
+    question: "How much does it cost?",
+    answer: "Pricing starts at just ₹500/month for basic plans. We offer a free 3-day demo so you can test the service before committing. Plans scale based on features and query volume.",
   },
   {
     question: "How long does setup take?",
-    answer: "Most teams are up and running in under 5 minutes. Our no-code integrations and visual rule builder make it easy to configure without engineering resources. For custom setups, we offer dedicated onboarding support.",
-  },
-  {
-    question: "What's your pricing model?",
-    answer: "We price based on notification volume, not per seat. This means your entire team can use BusyNotify without worrying about user counts. Plans start at ₹0/month and scale based on your needs.",
-  },
-  {
-    question: "Do you offer on-premise deployment?",
-    answer: "Yes, our Enterprise plan includes on-premise deployment options for organizations with strict data residency or compliance requirements. Contact our sales team to learn more.",
-  },
-  {
-    question: "How reliable is the service?",
-    answer: "We maintain 99.9%+ uptime with redundant infrastructure across multiple regions. Our average delivery time is under 50ms, and we offer SLA guarantees on our paid plans.",
+    answer: "Most businesses are up and running within 24 hours. Our team handles the complete integration with your Busy Software. You just need to share your Busy access details and we do the rest.",
   },
   {
     question: "Can I try before I buy?",
-    answer: "Absolutely. All paid plans include a 14-day free trial with no credit card required. You can also start with our free tier and upgrade anytime.",
+    answer: "Yes! We offer a free 3-day demo with no credit card required. You can test WhatsApp integration, chatbot, and other features with real data from your Busy Software.",
   },
 ];
 
@@ -60,6 +60,9 @@ export function FAQ() {
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Frequently asked <span className="gradient-text">questions</span>
           </h2>
+          <p className="mt-4 text-muted-foreground">
+            Everything you need to know about BusyNotify
+          </p>
         </motion.div>
 
         <motion.div

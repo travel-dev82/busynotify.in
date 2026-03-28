@@ -1866,3 +1866,21 @@ Use 'kill 615' to stop it.
 ✓ Compiled in 126ms
 ✓ Compiled in 123ms
 ✓ Compiled in 119ms
+ GET / 200 in 179ms (compile: 3ms, render: 176ms)
+ GET /solutions 200 in 72ms (compile: 51ms, render: 21ms)
+ GET /site.webmanifest 404 in 49ms (compile: 13ms, render: 35ms)
+ GET /solutions 200 in 214ms (compile: 3ms, render: 211ms)
+ GET /site.webmanifest 404 in 50ms (compile: 12ms, render: 37ms)
+ GET /site.webmanifest 404 in 36ms (compile: 12ms, render: 24ms)
+ GET /solutions/reporting-dashboard 200 in 423ms (compile: 406ms, render: 17ms)
+ GET /site.webmanifest 404 in 27ms (compile: 4ms, render: 23ms)
+✓ Compiled in 180ms
+✓ Compiled in 167ms
+✓ Compiled in 189ms
+✓ Compiled in 127ms
+✓ Compiled in 180ms
+✓ Compiled in 142ms
+✓ Compiled in 183ms
+ GET /solutions/reporting-dashboard 200 in 17ms (compile: 3ms, render: 14ms)
+ GET / 200 in 74ms (compile: 51ms, render: 23ms)
+ GET /site.webmanifest 404 in 39ms (compile: 15ms, render: 24ms)

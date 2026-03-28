@@ -1,29 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Plug, Settings, Bell } from "lucide-react";
+import { Database, Settings, Bot, CheckCircle2 } from "lucide-react";
 
 const steps = [
   {
     number: "01",
-    title: "Connect your tools",
-    description: "Integrate with Slack, Teams, Email, SMS, and 40+ other services in minutes. Our no-code integrations make setup a breeze.",
-    icon: Plug,
-    gradient: "from-primary/20 to-primary/5",
+    title: "Connect Busy Software",
+    description: "We integrate with your Busy Accounting Software database. Works with Busy 17, 18, 21, and all versions. Setup takes just a few hours.",
+    icon: Database,
   },
   {
     number: "02",
-    title: "Define your rules",
-    description: "Use our visual rule builder to create smart notification policies. Set conditions, priorities, and routing logic without writing code.",
+    title: "Configure Your Solutions",
+    description: "Choose which solutions you need: WhatsApp integration, chatbot, payment reminders, reports dashboard, or all of them. Customize messages and schedules.",
     icon: Settings,
-    gradient: "from-accent/20 to-accent/5",
   },
   {
     number: "03",
-    title: "Get notified. Instantly.",
-    description: "When something important happens, the right people get notified on the right channel — in milliseconds. No delays, no missed alerts.",
-    icon: Bell,
-    gradient: "from-green-500/20 to-green-500/5",
+    title: "Go Live & Automate",
+    description: "Your customers start receiving automatic messages, can query balances via chatbot, and access reports 24/7. You save hours every day.",
+    icon: Bot,
   },
 ];
 
@@ -43,10 +40,10 @@ export function HowItWorks() {
           <span className="label-accent">How It Works</span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Up and running in{" "}
-            <span className="gradient-text">under 5 minutes</span>
+            <span className="gradient-text">under 24 hours</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            No complex setup. No lengthy onboarding. Just connect, configure, and go.
+            No technical knowledge required. We handle the complete setup for you.
           </p>
         </motion.div>
 
@@ -73,8 +70,8 @@ export function HowItWorks() {
                 
                 {/* Icon */}
                 <div className="relative">
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${step.gradient}`}>
-                    <step.icon className="w-6 h-6 text-foreground" />
+                  <div className="inline-flex p-3 rounded-xl bg-primary/10">
+                    <step.icon className="w-6 h-6 text-primary" />
                   </div>
                 </div>
                 
@@ -86,6 +83,27 @@ export function HowItWorks() {
             </motion.div>
           ))}
         </div>
+
+        {/* Benefits */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 flex flex-wrap justify-center gap-6"
+        >
+          {[
+            "No code changes needed",
+            "Works with your existing Busy setup",
+            "Free 3-day demo",
+            "Cancel anytime",
+          ].map((benefit, index) => (
+            <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+              <CheckCircle2 className="w-4 h-4 text-green-500" />
+              <span>{benefit}</span>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

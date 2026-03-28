@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 
 export function ProblemSolution() {
   const problems = [
-    "Your team is drowning in tool-switching.",
-    "Critical events get buried in the noise.",
-    "Responses happen too late — when it's already a crisis.",
+    "Customers keep calling to check their balance and outstanding.",
+    "Invoices and receipts get sent manually — time-consuming and error-prone.",
+    "Payment reminders are inconsistent, leading to delayed collections.",
+    "No visibility into which customers are overdue or at risk.",
   ];
 
   return (
@@ -19,7 +20,7 @@ export function ProblemSolution() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-6"
+          className="space-y-4"
         >
           {problems.map((problem, index) => (
             <motion.p
@@ -28,8 +29,9 @@ export function ProblemSolution() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="text-xl sm:text-2xl text-muted-foreground"
+              className="text-lg sm:text-xl text-muted-foreground"
             >
+              <span className="text-red-400 mr-2">✗</span>
               {problem}
             </motion.p>
           ))}
@@ -44,7 +46,7 @@ export function ProblemSolution() {
         >
           <div className="inline-flex items-center gap-3">
             <div className="h-px w-8 bg-gradient-to-r from-transparent to-primary" />
-            <span className="text-primary font-medium">BusyNotify changes that.</span>
+            <span className="text-primary font-semibold">BusyNotify automates it all.</span>
             <div className="h-px w-8 bg-gradient-to-l from-transparent to-primary" />
           </div>
         </motion.div>
@@ -54,10 +56,10 @@ export function ProblemSolution() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto"
+          className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto"
         >
-          We built BusyNotify because we lived this pain. Every day, critical alerts were lost in a sea of notifications. 
-          We knew there had to be a better way — one that uses AI to surface what matters, when it matters.
+          Built specifically for <span className="text-foreground font-medium">Busy Accounting Software users</span>. 
+          We connect to your Busy database and automate customer communication, reminders, reporting, and more.
         </motion.p>
       </div>
     </section>
