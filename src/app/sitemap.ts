@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://busynotify.in";
 
-  // Static pages
+  // Static pages with SEO priorities
   const staticPages = [
     {
       url: baseUrl,
@@ -14,8 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/solutions`,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
+      changeFrequency: "weekly" as const,
+      priority: 0.95, // High priority for main solution page
     },
     {
       url: `${baseUrl}/pricing`,
@@ -32,35 +32,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/terms`,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "yearly" as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "yearly" as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/cookies`,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "yearly" as const,
       priority: 0.3,
     },
   ];
 
   // Blog posts
   const blogPosts = [
-    "intelligent-notification-routing",
-    "webhook-triggers-best-practices",
-    "reducing-alert-fatigue",
+    {
+      slug: "intelligent-notification-routing",
+      priority: 0.6,
+    },
+    {
+      slug: "webhook-triggers-best-practices",
+      priority: 0.6,
+    },
+    {
+      slug: "reducing-alert-fatigue",
+      priority: 0.6,
+    },
   ];
 
-  const blogPages = blogPosts.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
+  const blogPages = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: post.priority,
   }));
 
   return [...staticPages, ...blogPages];
