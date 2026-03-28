@@ -194,10 +194,239 @@ export const faqSchema = {
   ]
 };
 
+// Transportation Slip Management Schemas
+export const transportationSlipServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Transportation Slip Management System",
+  "serviceType": "Document Management",
+  "description": "Digital transport challan management with Google Drive integration. Upload LR copies via PWA, let customers access transport details through chatbot. Paperless logistics documentation for Indian businesses.",
+  "url": "https://busynotify.in/solutions/transportation-slip-management",
+  "provider": {
+    "@type": "Organization",
+    "name": "BusyNotify"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "featureList": [
+    "Transport Slip Photo Capture",
+    "Google Drive Auto Upload",
+    "Bill-wise Organization",
+    "Customer Access Portal",
+    "Chatbot Integration",
+    "Mobile PWA",
+    "Paperless Documentation"
+  ]
+};
+
+export const transportationSlipBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://busynotify.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Solutions",
+      "item": "https://busynotify.in/solutions"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Transportation Slip Management",
+      "item": "https://busynotify.in/solutions/transportation-slip-management"
+    }
+  ]
+};
+
+// Customer Map Report Schemas
+export const customerMapServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Customer Map Report - Geographic Analytics Dashboard",
+  "serviceType": "Business Analytics",
+  "description": "Google Maps-powered dashboard showing customer distribution across India. State-wise and district-wise business analytics, outstanding payment visualization, and demand trend analysis for Busy Accounting Software users.",
+  "url": "https://busynotify.in/solutions/customer-map-report",
+  "provider": {
+    "@type": "Organization",
+    "name": "BusyNotify"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "featureList": [
+    "All-India Customer Map",
+    "State-wise Business Analytics",
+    "District-level Insights",
+    "Outstanding Payment Visualization",
+    "Demand Trend Analysis",
+    "Historical Comparisons",
+    "Export Reports"
+  ]
+};
+
+export const customerMapBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://busynotify.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Solutions",
+      "item": "https://busynotify.in/solutions"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Customer Map Report",
+      "item": "https://busynotify.in/solutions/customer-map-report"
+    }
+  ]
+};
+
 // Combine all schemas
 export const allSchemas = [
   softwareApplicationSchema,
   serviceSchema,
   breadcrumbSchema,
   faqSchema,
+];
+
+export const transportationSlipSchemas = [
+  transportationSlipServiceSchema,
+  transportationSlipBreadcrumbSchema,
+];
+
+export const customerMapSchemas = [
+  customerMapServiceSchema,
+  customerMapBreadcrumbSchema,
+];
+
+// Credit Line Sender Schemas
+export const creditLineServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Credit Line Sender - Smart Credit Management System",
+  "serviceType": "Credit Control",
+  "description": "Intelligent credit management system for Busy Accounting Software. Automatically monitor credit limits and credit days at customer level. Send reminders when limits are breached for timely recoveries.",
+  "url": "https://busynotify.in/solutions/credit-line-sender",
+  "provider": {
+    "@type": "Organization",
+    "name": "BusyNotify"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "featureList": [
+    "Credit Limit Monitoring",
+    "Credit Days Tracking",
+    "Dual Condition Check",
+    "Customer-Level Control",
+    "Smart Targeting",
+    "Multi-Channel Alerts",
+    "Policy Enforcement",
+    "Recovery Analytics"
+  ]
+};
+
+export const creditLineBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://busynotify.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Solutions",
+      "item": "https://busynotify.in/solutions"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Credit Line Sender",
+      "item": "https://busynotify.in/solutions/credit-line-sender"
+    }
+  ]
+};
+
+export const creditLineSchemas = [
+  creditLineServiceSchema,
+  creditLineBreadcrumbSchema,
+];
+
+// Google Sheet Automation Schemas
+export const googleSheetServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Busy Accounting Software Google Sheet Automation",
+  "serviceType": "Data Integration",
+  "description": "Automatically sync Busy Accounting Software data to Google Sheets using pull-based updates. Free templates for customers, invoices, receipts, and products. Custom query management system available.",
+  "url": "https://busynotify.in/solutions/google-sheet-automation",
+  "provider": {
+    "@type": "Organization",
+    "name": "BusyNotify"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "featureList": [
+    "Pull-Based Data Sync",
+    "Configurable Update Intervals",
+    "No API Rate Limits",
+    "Free Data Templates",
+    "Custom Query Management",
+    "Multiple Sheet Support",
+    "Real-time Updates"
+  ]
+};
+
+export const googleSheetBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://busynotify.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Solutions",
+      "item": "https://busynotify.in/solutions"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Google Sheet Automation",
+      "item": "https://busynotify.in/solutions/google-sheet-automation"
+    }
+  ]
+};
+
+export const googleSheetSchemas = [
+  googleSheetServiceSchema,
+  googleSheetBreadcrumbSchema,
 ];

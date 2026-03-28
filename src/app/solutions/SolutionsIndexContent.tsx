@@ -13,7 +13,11 @@ import {
   Clock,
   Bell,
   Phone,
-  ClipboardList
+  ClipboardList,
+  Truck,
+  Map,
+  CreditCard,
+  FileSpreadsheet
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -65,6 +69,70 @@ const solutions = [
     ],
     popular: false,
     badge: "For Teams",
+  },
+  {
+    id: "transportation-slip-management",
+    title: "Transportation Slip Management",
+    shortTitle: "Transport Slips",
+    description: "Digital transport challan management with Google Drive integration. Upload LR copies via PWA, let customers access transport details through chatbot. Paperless logistics documentation.",
+    icon: Truck,
+    features: [
+      "Slip Photo Capture",
+      "Google Drive Upload",
+      "Bill-wise Organization",
+      "Customer Access",
+      "Chatbot Integration",
+    ],
+    popular: false,
+    badge: "Unique Feature",
+  },
+  {
+    id: "customer-map-report",
+    title: "Customer Map Report",
+    shortTitle: "Map Analytics",
+    description: "Google Maps-powered dashboard showing customer distribution across India. State-wise and district-wise business analytics, outstanding payment visualization, and demand trend analysis.",
+    icon: Map,
+    features: [
+      "All-India Customer Map",
+      "State-wise Analytics",
+      "District-level Insights",
+      "Outstanding Visualization",
+      "Demand Trends",
+    ],
+    popular: false,
+    badge: "Visual Analytics",
+  },
+  {
+    id: "credit-line-sender",
+    title: "Credit Line Sender",
+    shortTitle: "Credit Control",
+    description: "Intelligent credit management system that monitors credit limits and credit days at customer level. Automatic reminders when customers breach their credit terms.",
+    icon: CreditCard,
+    features: [
+      "Credit Limit Monitoring",
+      "Credit Days Tracking",
+      "Dual Condition Check",
+      "Auto Reminders",
+      "Policy Enforcement",
+    ],
+    popular: false,
+    badge: "Smart Recovery",
+  },
+  {
+    id: "google-sheet-automation",
+    title: "Google Sheet Automation",
+    shortTitle: "Data Sync",
+    description: "Automatically sync Busy Software data to Google Sheets with pull-based updates every 10 minutes. Free templates for customers, invoices, receipts. Custom queries available.",
+    icon: FileSpreadsheet,
+    features: [
+      "Pull-Based Sync",
+      "No API Limits",
+      "Free Data Templates",
+      "Custom Queries",
+      "Real-time Updates",
+    ],
+    popular: false,
+    badge: "Data Integration",
   },
 ];
 
