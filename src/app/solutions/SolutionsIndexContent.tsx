@@ -10,7 +10,10 @@ import {
   ChevronRight,
   Zap,
   Users,
-  Clock
+  Clock,
+  Bell,
+  Phone,
+  ClipboardList
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -31,19 +34,45 @@ const solutions = [
     popular: true,
     badge: "Most Popular",
   },
-  // Future solutions can be added here
-  // {
-  //   id: "tally-erp-chatbot",
-  //   title: "Tally ERP Chatbot",
-  //   ...
-  // },
+  {
+    id: "payment-reminder-system",
+    title: "Payment Reminder System",
+    shortTitle: "Payment Reminders",
+    description: "24/7 automated payment reminders integrated with Busy Software. Send daily, weekly, or monthly reminders via WhatsApp and SMS. Bill-by-bill or ledger-based with full customization.",
+    icon: Bell,
+    features: [
+      "24/7 Uptime",
+      "Flexible Scheduling",
+      "Bill-by-bill Statements",
+      "Custom Messages",
+      "Testing Mode",
+    ],
+    popular: false,
+    badge: "Automated",
+  },
+  {
+    id: "due-follow-up-system",
+    title: "Due Follow-up System",
+    shortTitle: "Follow-up Management",
+    description: "Manual follow-up system for telecallers with Busy Software integration. Track pending payments, record promises, and get dual reminders for both staff and customers on promise dates.",
+    icon: ClipboardList,
+    features: [
+      "Telecaller Dashboard",
+      "Promise Date Tracking",
+      "Follow-up History",
+      "Dual Reminders",
+      "Team Performance",
+    ],
+    popular: false,
+    badge: "For Teams",
+  },
 ];
 
 const benefits = [
   {
     icon: Clock,
     title: "24/7 Availability",
-    description: "Your chatbot never sleeps. Customers get instant responses anytime.",
+    description: "Your systems never sleep. Customers get instant responses anytime.",
   },
   {
     icon: Zap,
@@ -53,7 +82,7 @@ const benefits = [
   {
     icon: Users,
     title: "Multi-Channel",
-    description: "Works with WhatsApp, Telegram, and more platforms.",
+    description: "Works with WhatsApp, Telegram, SMS, and more platforms.",
   },
   {
     icon: Building2,
@@ -90,8 +119,8 @@ export function SolutionsIndexContent() {
             </h1>
             
             <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
-              Transform how your business handles customer queries. Our AI chatbots integrate 
-              with popular Indian accounting software to automate responses 24/7.
+              Transform how your business handles customer queries and payment collections. 
+              Our solutions integrate with popular Indian accounting software to automate everything.
             </p>
           </motion.div>
         </div>
@@ -139,6 +168,11 @@ export function SolutionsIndexContent() {
                       <h3 className="text-2xl font-bold">{solution.title}</h3>
                       {solution.popular && (
                         <span className="px-3 py-1 text-xs font-medium bg-primary/20 text-primary rounded-full">
+                          {solution.badge}
+                        </span>
+                      )}
+                      {!solution.popular && (
+                        <span className="px-3 py-1 text-xs font-medium bg-white/10 text-muted-foreground rounded-full">
                           {solution.badge}
                         </span>
                       )}
@@ -230,7 +264,7 @@ export function SolutionsIndexContent() {
               Need a Custom Solution?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-              We can build custom chatbot integrations for your specific ERP or accounting software. 
+              We can build custom integrations for your specific ERP or accounting software. 
               Let's discuss your requirements.
             </p>
             
