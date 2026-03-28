@@ -19,7 +19,8 @@ import {
   CreditCard,
   FileSpreadsheet,
   Code,
-  MessageCircle
+  MessageCircle,
+  LayoutDashboard
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -39,6 +40,38 @@ const solutions = [
     ],
     popular: true,
     badge: "Most Popular",
+  },
+  {
+    id: "whatsapp-integration",
+    title: "WhatsApp Integration",
+    shortTitle: "WhatsApp",
+    description: "Automatically send all vouchers from Busy Software to customers via WhatsApp. Invoices, quotations, orders, receipts, credit notes - all delivered instantly with PDF attachments.",
+    icon: MessageCircle,
+    features: [
+      "All Voucher Types",
+      "Auto PDF Delivery",
+      "Reports on Demand",
+      "Chatbot Integration",
+      "Delivery Tracking",
+    ],
+    popular: false,
+    badge: "Essential",
+  },
+  {
+    id: "reporting-dashboard",
+    title: "Reporting Dashboard & PWA",
+    shortTitle: "Reports Dashboard",
+    description: "Comprehensive web portal and PWA for 15+ Busy Software reports. Create multiple salesmen, track customer revisits, and access reports 24/7 from any device.",
+    icon: LayoutDashboard,
+    features: [
+      "15+ Reports",
+      "Multi-Salesman",
+      "PWA Access",
+      "Revisit Tracking",
+      "24/7 Available",
+    ],
+    popular: false,
+    badge: "Business Intelligence",
   },
   {
     id: "payment-reminder-system",
@@ -151,22 +184,6 @@ const solutions = [
     ],
     popular: false,
     badge: "For Developers",
-  },
-  {
-    id: "whatsapp-integration",
-    title: "WhatsApp Integration",
-    shortTitle: "WhatsApp",
-    description: "Automatically send all vouchers from Busy Software to customers via WhatsApp. Invoices, quotations, orders, receipts, credit notes - all delivered instantly with PDF attachments.",
-    icon: MessageCircle,
-    features: [
-      "All Voucher Types",
-      "Auto PDF Delivery",
-      "Reports on Demand",
-      "Chatbot Integration",
-      "Delivery Tracking",
-    ],
-    popular: true,
-    badge: "Most Popular",
   },
 ];
 

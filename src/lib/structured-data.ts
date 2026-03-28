@@ -549,3 +549,71 @@ export const whatsappIntegrationSchemas = [
   whatsappIntegrationServiceSchema,
   whatsappIntegrationBreadcrumbSchema,
 ];
+
+// Reporting Dashboard Schemas
+export const reportingDashboardServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Reporting Dashboard & PWA for Busy Accounting Software",
+  "serviceType": "Business Intelligence",
+  "description": "Comprehensive reporting dashboard and Progressive Web App for Busy Accounting Software. Access 15+ reports including ledger, sales register, purchase reports, bills receivable 24/7. Multi-salesman management and real-time business analytics.",
+  "url": "https://busynotify.in/solutions/reporting-dashboard",
+  "provider": {
+    "@type": "Organization",
+    "name": "BusyNotify"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "featureList": [
+    "Ledger Report",
+    "Bills Receivable",
+    "Sales List",
+    "Sales Register",
+    "Sales Orders",
+    "Sales Quotations",
+    "Sales Return",
+    "Purchase Register",
+    "Purchase Orders",
+    "Purchase Return",
+    "Receipt Register",
+    "Payment Register",
+    "Material Receipt",
+    "Material Issue",
+    "Revisit Gap Report",
+    "Multi-Salesman Management",
+    "Progressive Web App",
+    "24/7 Report Access"
+  ]
+};
+
+export const reportingDashboardBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://busynotify.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Solutions",
+      "item": "https://busynotify.in/solutions"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Reporting Dashboard",
+      "item": "https://busynotify.in/solutions/reporting-dashboard"
+    }
+  ]
+};
+
+export const reportingDashboardSchemas = [
+  reportingDashboardServiceSchema,
+  reportingDashboardBreadcrumbSchema,
+];
