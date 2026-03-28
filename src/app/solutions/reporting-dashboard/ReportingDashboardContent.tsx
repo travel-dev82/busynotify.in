@@ -31,20 +31,28 @@ import {
   Eye,
   Globe,
   Monitor,
-  Database
+  Database,
+  IndianRupee,
+  Calculator,
+  Building,
+  TruckIcon,
+  UserCheck,
+  XCircle,
+  CheckCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// SEO-Optimized Reports List with Keywords
 const reportsList = [
   {
     category: "Financial Reports",
     icon: BookOpen,
     color: "text-blue-400",
     reports: [
-      { name: "Ledger Report", description: "Complete account statements with all transactions, balances, and party details" },
-      { name: "Bills Receivable", description: "Track all pending bills and outstanding amounts from customers" },
-      { name: "Receipt Register", description: "Record of all payment receipts with dates, parties, and amounts" },
-      { name: "Payment Register", description: "Complete payment history with supplier and expense details" },
+      { name: "Ledger Report (Party Ledger / Account Statement)", description: "View complete party-wise ledger from BUSY online. Check all transactions, balances, and account statements without opening BUSY desktop.", keyword: "BUSY ledger online" },
+      { name: "Outstanding Report (Bills Receivable / Party Outstanding)", description: "Track all pending bills and outstanding amounts from customers. Age-wise analysis of receivables from BUSY data.", keyword: "BUSY outstanding report mobile" },
+      { name: "Receipt Register (Payment Receipts)", description: "Record of all payment receipts with dates, parties, and amounts from BUSY.", keyword: "BUSY receipt register" },
+      { name: "Payment Register (Payment Vouchers)", description: "Complete payment history with supplier and expense details from BUSY.", keyword: "BUSY payment register" },
     ],
   },
   {
@@ -52,11 +60,11 @@ const reportsList = [
     icon: TrendingUp,
     color: "text-green-400",
     reports: [
-      { name: "Sales List", description: "Item-wise and invoice-wise sales data with customer information" },
-      { name: "Sales Register", description: "Complete sales summary with tax details and party-wise breakdown" },
-      { name: "Sales Orders", description: "Track all sales orders with pending and fulfilled status" },
-      { name: "Sales Quotations", description: "Monitor quotations sent, pending, and converted to orders" },
-      { name: "Sales Return", description: "Track returns, reasons, and credit note generation" },
+      { name: "Sales List (Item-wise Sales)", description: "Item-wise and invoice-wise sales data with customer information from BUSY.", keyword: "BUSY sales list report" },
+      { name: "Sales Register (GST Sales Report)", description: "Complete sales summary with tax details and party-wise breakdown. GST-compliant sales report from BUSY.", keyword: "BUSY GST sales report" },
+      { name: "Sales Orders (Pending Orders)", description: "Track all sales orders with pending and fulfilled status from BUSY.", keyword: "BUSY sales order tracking" },
+      { name: "Sales Quotations (Quotation Tracking)", description: "Monitor quotations sent, pending, and converted to orders from BUSY.", keyword: "BUSY quotation report" },
+      { name: "Sales Return (Credit Notes)", description: "Track returns, reasons, and credit note generation from BUSY.", keyword: "BUSY sales return report" },
     ],
   },
   {
@@ -64,9 +72,9 @@ const reportsList = [
     icon: ShoppingCart,
     color: "text-yellow-400",
     reports: [
-      { name: "Purchase Register", description: "Complete purchase summary with supplier and item details" },
-      { name: "Purchase Orders", description: "Track all POs with pending deliveries and supplier status" },
-      { name: "Purchase Return", description: "Monitor returns to suppliers and debit note tracking" },
+      { name: "Purchase Register (Purchase Summary)", description: "Complete purchase summary with supplier and item details from BUSY.", keyword: "BUSY purchase register" },
+      { name: "Purchase Orders (PO Tracking)", description: "Track all POs with pending deliveries and supplier status from BUSY.", keyword: "BUSY purchase order report" },
+      { name: "Purchase Return (Debit Notes)", description: "Monitor returns to suppliers and debit note tracking from BUSY.", keyword: "BUSY purchase return" },
     ],
   },
   {
@@ -74,8 +82,8 @@ const reportsList = [
     icon: Package,
     color: "text-purple-400",
     reports: [
-      { name: "Material Receipt", description: "Track all material inward with supplier and quantity details" },
-      { name: "Material Issue", description: "Monitor material consumption and transfers between locations" },
+      { name: "Material Receipt (Stock Inward)", description: "Track all material inward with supplier and quantity details from BUSY.", keyword: "BUSY material receipt report" },
+      { name: "Material Issue (Stock Consumption)", description: "Monitor material consumption and transfers between locations from BUSY.", keyword: "BUSY material issue report" },
     ],
   },
   {
@@ -83,7 +91,7 @@ const reportsList = [
     icon: BarChart3,
     color: "text-primary",
     reports: [
-      { name: "Revisit Gap Report", description: "Track customer visit frequency and identify repeat customers" },
+      { name: "Customer Follow-Up Report (Revisit Gap Analysis)", description: "Track customer visit frequency, identify repeat customers, and spot at-risk customers for follow-up.", keyword: "BUSY customer revisit tracking" },
     ],
   },
 ];
@@ -92,22 +100,22 @@ const dashboardFeatures = [
   {
     icon: Monitor,
     title: "Web Portal Dashboard",
-    description: "Access all reports from any browser. Desktop, tablet, or laptop - responsive design works everywhere.",
+    description: "Access all BUSY reports from any browser. Desktop, tablet, or laptop - responsive design works everywhere.",
   },
   {
     icon: Smartphone,
-    title: "Progressive Web App",
-    description: "Install as an app on your phone. Access reports on-the-go without app store downloads.",
+    title: "Mobile PWA App",
+    description: "Install as an app on your phone. Access BUSY reports on-the-go without app store downloads.",
   },
   {
     icon: Clock,
     title: "24/7 Availability",
-    description: "Reports available round the clock. Check business performance anytime, anywhere.",
+    description: "BUSY reports available round the clock. Check business performance anytime, anywhere - even when BUSY is closed.",
   },
   {
     icon: RefreshCw,
     title: "Real-time Sync",
-    description: "Data syncs with Busy Software automatically. Always see the latest transactions.",
+    description: "Data syncs with BUSY Software automatically. Always see the latest transactions without manual export.",
   },
 ];
 
@@ -115,22 +123,22 @@ const salesmanFeatures = [
   {
     icon: UserPlus,
     title: "Create Multiple Salesmen",
-    description: "Admin can create unlimited salesman accounts. Each gets controlled access to relevant reports.",
+    description: "Admin can create unlimited salesman accounts. Each gets controlled access to relevant BUSY reports.",
   },
   {
     icon: Eye,
     title: "Controlled Visibility",
-    description: "Define what each salesman can see. Restrict by customer, territory, or report type.",
+    description: "Define what each salesman can see. Restrict by customer, territory, or report type from BUSY data.",
   },
   {
     icon: BarChart3,
     title: "Performance Tracking",
-    description: "Track individual salesman performance. See sales, collections, and customer visits.",
+    description: "Track individual salesman performance. See sales, collections, and customer visits from BUSY.",
   },
   {
     icon: Shield,
     title: "Secure Access",
-    description: "Each user has unique credentials. Activity logs maintain complete audit trail.",
+    description: "Each user has unique credentials. Activity logs maintain complete audit trail for compliance.",
   },
 ];
 
@@ -138,12 +146,12 @@ const pwaFeatures = [
   {
     icon: Globe,
     title: "No App Store Needed",
-    description: "Install directly from browser. No Play Store or App Store required.",
+    description: "Install directly from browser. No Play Store or App Store required for BUSY reports access.",
   },
   {
     icon: Zap,
     title: "Lightning Fast",
-    description: "Optimized for speed. Reports load in seconds even on slow connections.",
+    description: "Optimized for speed. BUSY reports load in seconds even on slow connections.",
   },
   {
     icon: Database,
@@ -161,80 +169,188 @@ const benefits = [
   {
     icon: Clock,
     title: "Instant Access",
-    description: "No waiting for IT to generate reports. Self-service access to all business data.",
+    description: "No waiting for IT to generate reports. Self-service access to all BUSY business data.",
   },
   {
     icon: Users,
     title: "Team Collaboration",
-    description: "Multiple team members access reports simultaneously. No conflicts, no delays.",
+    description: "Multiple team members access BUSY reports simultaneously. No conflicts, no delays.",
   },
   {
     icon: TrendingUp,
     title: "Better Decisions",
-    description: "Real-time insights lead to faster, data-driven business decisions.",
+    description: "Real-time insights from BUSY lead to faster, data-driven business decisions.",
   },
   {
     icon: Smartphone,
     title: "Mobile-First",
-    description: "Designed for mobile usage. Check reports on the field, in meetings, anywhere.",
+    description: "Designed for mobile usage. Check BUSY reports on the field, in meetings, anywhere.",
   },
+];
+
+// Role-based "Who Is This For" Section
+const roleBasedUsers = [
+  {
+    icon: Building2,
+    title: "Business Owners",
+    description: "Check sales, outstanding, and collections anytime from mobile. Monitor business performance without calling the office. Access BUSY data remotely.",
+    benefit: "BUSY owner dashboard for remote monitoring",
+  },
+  {
+    icon: Users,
+    title: "Salesmen / Field Staff",
+    description: "Check customer balance and outstanding before visits. Access sales history on mobile. No need to call office for customer data from BUSY.",
+    benefit: "BUSY reports for salesman on mobile",
+  },
+  {
+    icon: Calculator,
+    title: "Accountants / CAs",
+    description: "Access ledgers and registers without opening BUSY desktop. Quick reconciliation from anywhere. Multi-company support for CA firms.",
+    benefit: "BUSY reports for accountant access",
+  },
+  {
+    icon: TruckIcon,
+    title: "Distributors / Wholesalers",
+    description: "Monitor stock and sales remotely. Track salesman performance. Check outstanding from mobile without being at office.",
+    benefit: "BUSY dashboard for distributors",
+  },
+  {
+    icon: UserCheck,
+    title: "Managers",
+    description: "Track team performance in real-time. Monitor sales targets and collections. Approve requests remotely via mobile.",
+    benefit: "BUSY reports for managers",
+  },
+];
+
+// Problem Section - Why Do BUSY Users Need This
+const problems = [
+  {
+    problem: "BUSY is desktop-based",
+    solution: "No remote access to data",
+    icon: Monitor,
+  },
+  {
+    problem: "Owners can't check data outside office",
+    solution: "Must be at office computer",
+    icon: Building2,
+  },
+  {
+    problem: "Salesmen don't have access",
+    solution: "Call office for customer info",
+    icon: Users,
+  },
+  {
+    problem: "Accountants depend on operator",
+    solution: "Wait for reports to be generated",
+    icon: Calculator,
+  },
+  {
+    problem: "Reports not mobile-friendly",
+    solution: "Difficult to view on phone",
+    icon: Smartphone,
+  },
+];
+
+// BUSY Desktop vs BusyNotify Comparison
+const busyComparison = [
+  { aspect: "Mobile Access", busy: "❌ No", busynotify: "✅ Yes - PWA enabled", better: true },
+  { aspect: "Remote Access", busy: "❌ Desktop only", busynotify: "✅ Anywhere via web", better: true },
+  { aspect: "Multi-user Access", busy: "⚠️ Limited licenses", busynotify: "✅ Unlimited users", better: true },
+  { aspect: "Salesman Access", busy: "❌ Not available", busynotify: "✅ Controlled access", better: true },
+  { aspect: "Real-time Dashboard", busy: "❌ Must open BUSY", busynotify: "✅ Always available", better: true },
+  { aspect: "Mobile App", busy: "❌ No mobile app", busynotify: "✅ PWA for all devices", better: true },
+  { aspect: "Field Staff Access", busy: "❌ No", busynotify: "✅ Territory-based access", better: true },
+  { aspect: "24/7 Availability", busy: "⚠️ When BUSY is open", busynotify: "✅ Always online", better: true },
 ];
 
 const useCases = [
   {
     title: "Sales Team on the Field",
-    description: "Salesmen check outstanding balances and sales history before customer meetings.",
+    description: "Salesmen check outstanding balances and sales history from BUSY before customer meetings on their mobile.",
     icon: Users,
   },
   {
     title: "Management Reviews",
-    description: "Business owners track daily sales, purchases, and collections from anywhere.",
+    description: "Business owners track daily sales, purchases, and collections from BUSY anywhere via mobile dashboard.",
     icon: TrendingUp,
   },
   {
     title: "Inventory Monitoring",
-    description: "Warehouse teams track material movement and stock levels in real-time.",
+    description: "Warehouse teams track material movement and stock levels from BUSY in real-time on mobile.",
     icon: Package,
   },
   {
     title: "Accounts Reconciliation",
-    description: "Accounts team accesses ledgers and registers for quick reconciliation.",
+    description: "Accounts team accesses ledgers and registers from BUSY for quick reconciliation without opening BUSY desktop.",
     icon: BookOpen,
   },
 ];
 
+// Expanded SEO-Optimized FAQs (16+ questions)
 const faqs = [
   {
-    question: "What is the Reporting Dashboard for Busy Accounting Software?",
-    answer: "The Reporting Dashboard is a web-based portal and Progressive Web App (PWA) that provides 24/7 access to all your Busy Software reports. It includes financial reports, sales reports, purchase reports, inventory reports, and analytics - all accessible from any device.",
+    question: "Can I access BUSY reports on mobile?",
+    answer: "Yes! BusyNotify provides a mobile dashboard and Progressive Web App (PWA) that lets you access all BUSY reports from your smartphone. View ledger, outstanding, sales, purchase, and stock reports from anywhere without opening BUSY desktop.",
   },
   {
-    question: "Which reports are available in the dashboard?",
-    answer: "The dashboard includes: Ledger Report, Bills Receivable, Sales List, Sales Register, Sales Orders, Sales Quotations, Sales Return, Purchase Register, Purchase Orders, Purchase Return, Receipt Register, Payment Register, Material Receipt, Material Issue, and Revisit Gap Report for customer tracking.",
+    question: "Can I check BUSY ledger without opening the software?",
+    answer: "Absolutely! BusyNotify Dashboard provides online access to BUSY ledger reports. You can view party-wise ledger, account statements, and transaction history from any device with internet - no need to open BUSY desktop or be at the office computer.",
   },
   {
-    question: "Can I create multiple users for my team?",
-    answer: "Yes! As admin, you can create unlimited salesman and team member accounts. Each user gets controlled access based on your permissions. You can restrict access by customer, territory, or report type.",
+    question: "How to view BUSY data online?",
+    answer: "BusyNotify connects to your BUSY Accounting Software and provides a web-based dashboard. Simply log in from any browser or install the PWA on your mobile to access all BUSY reports online. Data syncs automatically in real-time.",
   },
   {
-    question: "What is the Revisit Gap Report?",
-    answer: "The Revisit Gap Report tracks customer visit frequency. It helps you identify which customers visit regularly, which haven't visited in a while, and patterns in customer behavior. This helps in customer retention and follow-up strategies.",
+    question: "Can salesmen access BUSY reports?",
+    answer: "Yes! BusyNotify allows you to create unlimited salesman accounts with controlled access. Each salesman can view relevant reports (outstanding, sales history, customer balance) on their mobile. Admin controls what data each salesman can see.",
   },
   {
-    question: "How does the PWA work?",
-    answer: "The Progressive Web App installs directly from your browser - no app store needed. It works on Android, iOS, and desktop. Once installed, access reports like a native app with fast loading and offline caching.",
+    question: "Is this a BUSY cloud solution?",
+    answer: "BusyNotify is an online dashboard that works with your existing BUSY desktop software. It syncs data from BUSY to provide cloud-like access. Your BUSY data remains on your computer while BusyNotify provides remote/mobile access to reports.",
   },
   {
-    question: "Is the data real-time?",
-    answer: "Yes, the dashboard syncs with your Busy Accounting Software automatically. Reports show the latest transactions within minutes of entry. No manual refresh or data export required.",
+    question: "Can I check outstanding report remotely?",
+    answer: "Yes! The outstanding report (bills receivable) from BUSY is available on the BusyNotify dashboard. Check party-wise outstanding, age-wise analysis, and pending amounts from your mobile or any web browser - no need to be at the office.",
   },
   {
-    question: "Can I access reports on mobile?",
-    answer: "Absolutely! The dashboard is fully responsive and works on any smartphone. Install the PWA for an app-like experience. Check reports on-the-go, in meetings, or from anywhere.",
+    question: "Does it work with BUSY desktop?",
+    answer: "Yes, BusyNotify works with BUSY Desktop (single user), BUSY on LAN, and BUSY Server editions. We support BUSY 17, BUSY 18, BUSY 21, and all major versions. Setup is handled by our team.",
   },
   {
-    question: "How secure is the access?",
-    answer: "Each user has unique login credentials. Data is transmitted over encrypted connections. Admin can control what each user sees. Complete activity logs maintain audit trail for compliance.",
+    question: "Can multiple users access reports?",
+    answer: "Absolutely! BusyNotify supports unlimited users. Create accounts for owners, managers, salesmen, and accountants. Each user gets controlled access based on their role. Admin has full control over permissions.",
+  },
+  {
+    question: "What reports are available from BUSY?",
+    answer: "BusyNotify provides 15+ reports from BUSY: Ledger Report (Party Ledger), Outstanding Report (Bills Receivable), Sales List, Sales Register (GST Sales), Sales Orders, Sales Quotations, Sales Return, Purchase Register, Purchase Orders, Purchase Return, Receipt Register, Payment Register, Material Receipt, Material Issue, and Customer Follow-Up (Revisit Gap) Report.",
+  },
+  {
+    question: "How does the PWA work for BUSY reports?",
+    answer: "The Progressive Web App (PWA) installs directly from your browser - no app store needed. Once installed, you can access BUSY reports like a native app on Android, iOS, or desktop. It works offline for recently viewed reports and loads fast even on slow connections.",
+  },
+  {
+    question: "Is the data real-time from BUSY?",
+    answer: "Yes, the dashboard syncs with your BUSY Accounting Software automatically. Reports show the latest transactions within minutes of entry in BUSY. No manual refresh or data export required.",
+  },
+  {
+    question: "Can I create multiple salesmen accounts?",
+    answer: "Yes! As admin, you can create unlimited salesman and team member accounts. Each user gets controlled access based on your permissions. You can restrict access by customer, territory, or report type from BUSY.",
+  },
+  {
+    question: "What is the Customer Follow-Up (Revisit Gap) Report?",
+    answer: "The Revisit Gap Report tracks customer visit patterns from BUSY data. It identifies which customers buy frequently, which haven't purchased recently (30-60 days), and which are at-risk (60+ days). This helps in customer retention and follow-up strategies.",
+  },
+  {
+    question: "How secure is the access to BUSY data?",
+    answer: "Each user has unique login credentials. Data is transmitted over encrypted connections. Admin can control what each user sees. Complete activity logs maintain audit trail for compliance. Your BUSY data remains secure.",
+  },
+  {
+    question: "Can accountants access BUSY reports remotely?",
+    answer: "Yes! Accountants can access ledgers, registers, and reconciliation reports from BUSY via the web dashboard. Perfect for CA firms managing multiple BUSY clients or accountants working remotely. Multi-company support available.",
+  },
+  {
+    question: "Why use BusyNotify instead of BUSY's built-in reports?",
+    answer: "BUSY desktop requires you to be at the office computer to view reports. BusyNotify provides: mobile access, remote access from anywhere, unlimited user accounts, salesman access with controls, real-time dashboard, 24/7 availability, and PWA for app-like experience - all without replacing your existing BUSY setup.",
   },
 ];
 
@@ -265,14 +381,11 @@ export function ReportingDashboardContent() {
               </nav>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                <span className="gradient-text">Reporting Dashboard</span>{" "}
-                & PWA for Busy Software
+                BUSY Reports Dashboard for <span className="gradient-text">Mobile & Remote Access</span> (PWA Enabled)
               </h1>
               
               <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-                Access <strong>15+ comprehensive reports</strong> 24/7 via web portal and mobile PWA. 
-                Create multiple salesmen, track customer revisits, and monitor business performance 
-                in real-time from any device.
+                <strong>Access BUSY Accounting Software reports online from mobile or web.</strong> View ledger, outstanding, sales, purchase, and stock reports anytime—without opening BUSY desktop. Perfect for business owners, sales teams, and accountants who need real-time data on the go.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -283,7 +396,7 @@ export function ReportingDashboardContent() {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link href="#reports">View All Reports</Link>
+                  <Link href="#comparison">BUSY vs BusyNotify</Link>
                 </Button>
               </div>
 
@@ -291,15 +404,15 @@ export function ReportingDashboardContent() {
               <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  <span>Works with BUSY 17/18/21</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
                   <span>15+ Reports</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
-                  <span>Multi-User Access</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500" />
-                  <span>PWA Enabled</span>
+                  <span>Unlimited Users</span>
                 </div>
               </div>
             </motion.div>
@@ -318,8 +431,8 @@ export function ReportingDashboardContent() {
                       <LayoutDashboard className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <div>
-                      <p className="font-medium">Business Dashboard</p>
-                      <p className="text-xs text-muted-foreground">Real-time overview</p>
+                      <p className="font-medium">BUSY Reports Dashboard</p>
+                      <p className="text-xs text-muted-foreground">Real-time from BUSY</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-green-400">
@@ -331,7 +444,7 @@ export function ReportingDashboardContent() {
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-white/5 rounded-xl p-4">
-                    <p className="text-xs text-muted-foreground">Today's Sales</p>
+                    <p className="text-xs text-muted-foreground">Today&apos;s Sales</p>
                     <p className="text-2xl font-bold text-green-400">₹2.4L</p>
                     <p className="text-xs text-green-400">↑ 12% from yesterday</p>
                   </div>
@@ -389,7 +502,7 @@ export function ReportingDashboardContent() {
         </div>
       </section>
 
-      {/* Dashboard Features Section */}
+      {/* Why Do BUSY Users Need This - Problem Section */}
       <section className="py-20 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -400,10 +513,165 @@ export function ReportingDashboardContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold">
-              Access Reports <span className="gradient-text">Your Way</span>
+              Why Do <span className="gradient-text">BUSY Users</span> Need an Online Reporting Dashboard?
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+              BUSY is powerful desktop software, but it has limitations for modern business needs. Here&apos;s the problem:
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {problems.map((item, index) => (
+              <motion.div
+                key={item.problem}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card rounded-xl p-6 text-center"
+              >
+                <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-6 h-6 text-red-400" />
+                </div>
+                <p className="font-medium text-sm mb-2">{item.problem}</p>
+                <p className="text-xs text-red-400">{item.solution}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-12 glass-card rounded-2xl p-8 text-center"
+          >
+            <p className="text-lg">
+              <strong className="text-primary">BusyNotify solves all these problems</strong> by providing online, mobile access to all your BUSY reports. No more being tied to the office desktop.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Who Is This For - Role-Based Section */}
+      <section className="py-20 bg-gradient-to-b from-primary/5 via-primary/10 to-transparent">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              <span className="gradient-text">Built for BUSY Users</span> Across Teams
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Web portal for desktop work, PWA for mobile access - both synced in real-time
+              Everyone in your organization gets the access they need - controlled by admin
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {roleBasedUsers.map((user, index) => (
+              <motion.div
+                key={user.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card rounded-xl p-6"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-xl bg-primary/10 shrink-0">
+                    <user.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold mb-2">{user.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{user.description}</p>
+                    <p className="text-xs text-primary font-medium">{user.benefit}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BUSY vs BusyNotify Comparison */}
+      <section id="comparison" className="py-20 border-y border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              Why Choose <span className="gradient-text">BusyNotify Dashboard</span> vs BUSY Desktop?
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+              BUSY already provides reports. Here&apos;s why you need BusyNotify for remote and mobile access:
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="glass-card rounded-2xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="px-6 py-4 text-left font-semibold">Feature</th>
+                      <th className="px-6 py-4 text-left font-semibold text-red-400">BUSY Desktop</th>
+                      <th className="px-6 py-4 text-left font-semibold text-green-400">BusyNotify</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {busyComparison.map((row, index) => (
+                      <tr key={row.aspect} className={index % 2 === 0 ? 'bg-white/5' : ''}>
+                        <td className="px-6 py-4 font-medium">{row.aspect}</td>
+                        <td className="px-6 py-4 text-muted-foreground">
+                          <span className="flex items-center gap-2">
+                            <XCircle className="w-4 h-4 text-red-400" />
+                            {row.busy}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4 text-green-400">
+                          <span className="flex items-center gap-2">
+                            <CheckCircle className="w-4 h-4 text-green-500" />
+                            {row.busynotify}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Dashboard Features Section */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              Access <span className="gradient-text">BUSY Reports</span> Your Way
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Web portal for desktop work, PWA for mobile access - both synced in real-time with BUSY
             </p>
           </motion.div>
 
@@ -428,8 +696,8 @@ export function ReportingDashboardContent() {
         </div>
       </section>
 
-      {/* All Reports Section */}
-      <section id="reports" className="py-20">
+      {/* All Reports Section - SEO Optimized */}
+      <section id="reports" className="py-20 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -439,10 +707,10 @@ export function ReportingDashboardContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold">
-              <span className="gradient-text">15+ Comprehensive Reports</span> Available
+              <span className="gradient-text">15+ BUSY Reports</span> Available Online
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Every report you need to run your business, accessible 24/7 from any device
+              Every report from BUSY accessible 24/7 from any device - without opening BUSY desktop
             </p>
           </motion.div>
 
@@ -466,7 +734,7 @@ export function ReportingDashboardContent() {
                   </span>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {category.reports.map((report) => (
                     <div key={report.name} className="bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-colors">
                       <div className="flex items-start gap-2">
@@ -474,6 +742,7 @@ export function ReportingDashboardContent() {
                         <div>
                           <p className="font-medium text-sm">{report.name}</p>
                           <p className="text-xs text-muted-foreground mt-1">{report.description}</p>
+                          <meta itemProp="keywords" content={report.keyword} />
                         </div>
                       </div>
                     </div>
@@ -485,8 +754,8 @@ export function ReportingDashboardContent() {
         </div>
       </section>
 
-      {/* Revisit Gap Report Highlight */}
-      <section className="py-20 border-y border-border bg-gradient-to-b from-transparent via-primary/5 to-transparent">
+      {/* Customer Follow-Up Report Highlight - Renamed for SEO */}
+      <section className="py-20 bg-gradient-to-b from-transparent via-primary/5 to-transparent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -501,12 +770,12 @@ export function ReportingDashboardContent() {
               </div>
               
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                <span className="gradient-text">Revisit Gap Report</span> - Know Your Customers Better
+                <span className="gradient-text">Customer Follow-Up & Revisit Tracking</span> Report
               </h2>
               
               <p className="text-lg text-muted-foreground mb-6">
-                Track customer visit patterns and identify buying behavior. Know which customers 
-                visit regularly, which are becoming inactive, and when to follow up for repeat business.
+                Track customer visit patterns from BUSY and identify buying behavior. Know which customers 
+                visit regularly, which are becoming inactive, and when to follow up for repeat business. Perfect for sales follow-up and customer retention.
               </p>
               
               <div className="space-y-4">
@@ -516,7 +785,7 @@ export function ReportingDashboardContent() {
                   </div>
                   <div>
                     <p className="font-medium">Identify Repeat Customers</p>
-                    <p className="text-sm text-muted-foreground">See who buys frequently and reward loyalty</p>
+                    <p className="text-sm text-muted-foreground">See who buys frequently and reward loyalty from BUSY data</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -525,7 +794,7 @@ export function ReportingDashboardContent() {
                   </div>
                   <div>
                     <p className="font-medium">Spot At-Risk Customers</p>
-                    <p className="text-sm text-muted-foreground">Find customers who haven't purchased recently</p>
+                    <p className="text-sm text-muted-foreground">Find inactive customers who haven&apos;t purchased recently</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -533,8 +802,8 @@ export function ReportingDashboardContent() {
                     <CheckCircle2 className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium">Optimize Follow-ups</p>
-                    <p className="text-sm text-muted-foreground">Time your outreach based on buying patterns</p>
+                    <p className="font-medium">Optimize Sales Follow-ups</p>
+                    <p className="text-sm text-muted-foreground">Time your outreach based on buying patterns from BUSY</p>
                   </div>
                 </div>
               </div>
@@ -549,7 +818,7 @@ export function ReportingDashboardContent() {
             >
               <h4 className="font-semibold mb-4 flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-primary" />
-                Customer Revisit Analysis
+                Customer Revisit Analysis from BUSY
               </h4>
               
               <div className="space-y-3">
@@ -574,7 +843,7 @@ export function ReportingDashboardContent() {
                     <span className="text-sm">At Risk (60+ days)</span>
                     <span className="font-bold text-red-400">23</span>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-1">No purchase in 60+ days</p>
+                  <p className="text-xs text-muted-foreground mt-1">No purchase in 60+ days - follow up needed</p>
                 </div>
               </div>
             </motion.div>
@@ -583,7 +852,7 @@ export function ReportingDashboardContent() {
       </section>
 
       {/* Salesman Management Section */}
-      <section className="py-20">
+      <section className="py-20 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -593,7 +862,7 @@ export function ReportingDashboardContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold">
-              <span className="gradient-text">Multi-Salesman Management</span> for Teams
+              <span className="gradient-text">BUSY Reports for Sales Team</span> - Multi-User Access
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
               Create unlimited salesman accounts with controlled access - admin has full control
@@ -627,7 +896,7 @@ export function ReportingDashboardContent() {
             transition={{ duration: 0.6 }}
             className="mt-12 glass-card rounded-2xl p-6"
           >
-            <h4 className="font-semibold mb-4">Active Salesmen Performance</h4>
+            <h4 className="font-semibold mb-4">Active Salesmen Performance (from BUSY)</h4>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
@@ -673,7 +942,7 @@ export function ReportingDashboardContent() {
       </section>
 
       {/* PWA Features Section */}
-      <section className="py-20 border-y border-border">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -683,7 +952,7 @@ export function ReportingDashboardContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold">
-              <span className="gradient-text">Progressive Web App</span> Features
+              <span className="gradient-text">Progressive Web App</span> for BUSY Reports
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
               App-like experience without the app store - works on any device
@@ -712,7 +981,7 @@ export function ReportingDashboardContent() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20">
+      <section className="py-20 border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -722,7 +991,7 @@ export function ReportingDashboardContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold">
-              How Teams Use the <span className="gradient-text">Reporting Dashboard</span>
+              How Teams Use the <span className="gradient-text">BUSY Reports Dashboard</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
               Real-world use cases for different roles in your organization
@@ -753,7 +1022,7 @@ export function ReportingDashboardContent() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 border-y border-border">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -763,10 +1032,10 @@ export function ReportingDashboardContent() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold">
-              Why Choose <span className="gradient-text">BusyNotify Reporting Dashboard</span>?
+              Why Choose <span className="gradient-text">BusyNotify</span> for BUSY Reports?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Transform how your team accesses and uses business data
+              Transform how your team accesses and uses business data from BUSY
             </p>
           </motion.div>
 
@@ -791,9 +1060,9 @@ export function ReportingDashboardContent() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      {/* FAQ Section - Expanded */}
+      <section id="faq" className="py-20 border-y border-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -802,10 +1071,10 @@ export function ReportingDashboardContent() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold">
-              Frequently Asked Questions about <span className="gradient-text">Reporting Dashboard</span>
+              Frequently Asked Questions about <span className="gradient-text">BUSY Reports Dashboard</span>
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Everything you need to know about accessing reports for Busy Software
+              Everything you need to know about accessing BUSY reports online
             </p>
           </motion.div>
 
@@ -816,7 +1085,7 @@ export function ReportingDashboardContent() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                transition={{ duration: 0.4, delay: index * 0.02 }}
                 className="glass-card rounded-xl p-6"
                 itemProp="mainEntity"
                 itemScope
@@ -851,10 +1120,10 @@ export function ReportingDashboardContent() {
             </div>
             
             <h2 className="text-2xl md:text-3xl font-bold">
-              Ready for 24/7 Report Access?
+              Ready for 24/7 Mobile Access to BUSY Reports?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-              Give your team instant access to all Busy Software reports. Create multiple salesmen, 
+              Give your team instant access to all BUSY reports from mobile and web. Create multiple salesmen, 
               track customer behavior, and monitor business in real-time. Start your free 3-day demo today.
             </p>
             
