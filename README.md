@@ -19,7 +19,6 @@
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
-- [Database Setup](#database-setup)
 - [Building for Production](#building-for-production)
 - [CloudPanel Deployment](#cloudpanel-deployment)
 - [PM2 Process Management](#pm2-process-management)
@@ -65,10 +64,10 @@ BusyNotify is a SaaS platform designed specifically for Indian businesses using 
 
 - 🌙 Dark/Light theme support
 - 📱 Fully responsive design
-- 📝 SEO-optimized blog system
+- 📝 SEO-optimized blog system with static content
 - 🗺️ Sitemap and robots.txt generation
 - 🎨 Modern UI with Framer Motion animations
-- ⚡ Server-side rendering for optimal performance
+- ⚡ Static site generation for optimal performance
 
 ---
 
@@ -79,7 +78,6 @@ BusyNotify is a SaaS platform designed specifically for Indian businesses using 
 | **Framework** | Next.js 16 (App Router) |
 | **Language** | TypeScript 5 |
 | **Runtime** | Bun / Node.js 18+ |
-| **Database** | SQLite with Prisma ORM |
 | **Styling** | Tailwind CSS 4 |
 | **UI Components** | shadcn/ui (New York style) |
 | **Animations** | Framer Motion |
@@ -103,13 +101,6 @@ busynotify/
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   └── site.webmanifest
-│
-├── prisma/                     # Database configuration
-│   ├── schema.prisma           # Database models
-│   └── seed.ts                 # Database seeding script
-│
-├── db/                         # SQLite database files
-│   └── custom.db
 │
 ├── src/
 │   ├── app/                    # Next.js App Router pages
@@ -143,7 +134,7 @@ busynotify/
 │   │   └── ui/                 # shadcn/ui components
 │   │
 │   ├── lib/                    # Utility libraries
-│   │   ├── db.ts               # Prisma client
+│   │   ├── static-data.ts      # Static blog data
 │   │   ├── blog.ts             # Blog utilities
 │   │   ├── utils.ts            # Helper functions
 │   │   ├── metadata.ts         # SEO metadata
@@ -175,7 +166,6 @@ Before installing BusyNotify, ensure you have the following:
 | Node.js | ≥ 18.0.0 | JavaScript runtime |
 | Bun | Latest | Package manager & runtime |
 | PM2 | Latest | Process manager (production) |
-| SQLite | 3.x | Database |
 
 ### Install Prerequisites (Ubuntu/Debian)
 
@@ -216,28 +206,15 @@ npm install
 
 ### 3. Configure Environment Variables
 
-Create a `.env` file in the root directory:
+Create a `.env` file in the root directory (optional):
 
 ```bash
-cp .env.example .env
+# Application Settings
+NODE_ENV="production"
+PORT=3000
 ```
 
-Edit the `.env` file with your configuration (see [Environment Variables](#environment-variables)).
-
-### 4. Initialize Database
-
-```bash
-# Generate Prisma client
-bun run db:generate
-
-# Push schema to database
-bun run db:push
-
-# Seed database with initial data
-bun run db:seed
-```
-
-### 5. Start Development Server
+### 4. Start Development Server
 
 ```bash
 bun run dev
@@ -249,18 +226,9 @@ The application will be available at `http://localhost:3000`
 
 ## Environment Variables
 
-Create a `.env` file in the project root with the following variables:
+Create a `.env` file in the project root with the following variables (all optional):
 
 ```env
-# ===========================================
-# DATABASE CONFIGURATION
-# ===========================================
-# SQLite database URL (relative or absolute path)
-DATABASE_URL="file:./db/custom.db"
-
-# For absolute path (recommended for production):
-# DATABASE_URL="file:/var/www/busynotify.in/db/custom.db"
-
 # ===========================================
 # APPLICATION SETTINGS
 # ===========================================
@@ -269,93 +237,14 @@ NODE_ENV="development"
 
 # Server port (default: 3000)
 PORT=3000
-
-# ===========================================
-# NEXTAUTH CONFIGURATION (Optional)
-# ===========================================
-# Required if using authentication features
-# NEXTAUTH_SECRET="your-secret-key-here"
-# NEXTAUTH_URL="https://busynotify.in"
-
-# ===========================================
-# API KEYS (Optional - For Future Features)
-# ===========================================
-# WhatsApp Business API
-# WHATSAPP_API_KEY=""
-# WHATSAPP_PHONE_NUMBER_ID=""
-
-# Google Services
-# GOOGLE_CLIENT_ID=""
-# GOOGLE_CLIENT_SECRET=""
 ```
 
 ### Environment Variables Reference
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `DATABASE_URL` | ✅ Yes | SQLite database file path |
-| `NODE_ENV` | ✅ Yes | Environment mode (`development`/`production`) |
+| `NODE_ENV` | ⬜ No | Environment mode (`development`/`production`) |
 | `PORT` | ⬜ No | Server port (default: 3000) |
-| `NEXTAUTH_SECRET` | ⬜ No | Secret for NextAuth.js sessions |
-| `NEXTAUTH_URL` | ⬜ No | Public URL for NextAuth.js |
-
----
-
-## Database Setup
-
-### Prisma Schema Models
-
-The application uses the following database models:
-
-```prisma
-model Author {
-  id          String   @id @default(cuid())
-  name        String
-  email       String   @unique
-  bio         String?
-  avatar      String?
-  role        String?
-  twitter     String?
-  linkedin    String?
-  website     String?
-  isDefault   Boolean  @default(false)
-  blogPosts   BlogPost[]
-}
-
-model BlogPost {
-  id           String   @id @default(cuid())
-  slug         String   @unique
-  title        String
-  description  String
-  content      String
-  publishedAt  DateTime @default(now())
-  image        String?
-  tags         String
-  readingTime  String   @default("5 min read")
-  published    Boolean  @default(true)
-  authorId     String
-  author       Author   @relation(fields: [authorId], references: [id])
-}
-```
-
-### Database Commands
-
-```bash
-# Generate Prisma client
-bun run db:generate
-
-# Push schema changes to database (development)
-bun run db:push
-
-# Create a migration (production)
-bun run db:migrate
-
-# Reset database (⚠️ destroys all data)
-bun run db:reset
-
-# Seed database with initial data
-bun run db:seed
-```
 
 ---
 
@@ -412,34 +301,13 @@ bun install
 npm install
 ```
 
-#### 4. Create Environment File
-
-```bash
-nano .env
-```
-
-Add the following content:
-```env
-DATABASE_URL="file:/var/www/busynotify.in/db/custom.db"
-NODE_ENV="production"
-PORT=3000
-```
-
-#### 5. Initialize Database
-
-```bash
-bun run db:generate
-bun run db:push
-bun run db:seed
-```
-
-#### 6. Build the Application
+#### 4. Build the Application
 
 ```bash
 bun run build
 ```
 
-#### 7. Configure Process Manager
+#### 5. Configure Process Manager
 
 **Option A: Using PM2 (Recommended)**
 
@@ -464,11 +332,11 @@ In CloudPanel, configure:
 - **Arguments**: `start`
 - **Port**: 3000
 
-#### 8. Configure Nginx/Reverse Proxy
+#### 6. Configure Nginx/Reverse Proxy
 
 CloudPanel typically handles this automatically. Ensure your domain points to the application.
 
-#### 9. SSL Configuration
+#### 7. SSL Configuration
 
 1. In CloudPanel, navigate to your application
 2. Go to **SSL/HTTPS**
@@ -528,11 +396,6 @@ The included `ecosystem.config.js` configures:
 | Start | `bun run start` | Start production server (requires PORT env) |
 | Start Default | `bun run start:default` | Start production server on port 3000 |
 | Lint | `bun run lint` | Run ESLint for code quality |
-| DB Generate | `bun run db:generate` | Generate Prisma client |
-| DB Push | `bun run db:push` | Push schema to database |
-| DB Migrate | `bun run db:migrate` | Create and apply migrations |
-| DB Reset | `bun run db:reset` | Reset database (⚠️ data loss) |
-| DB Seed | `bun run db:seed` | Seed database with initial data |
 | PM2 Start | `bun run pm2:start` | Start with PM2 |
 | PM2 Restart | `bun run pm2:restart` | Restart PM2 process |
 | PM2 Stop | `bun run pm2:stop` | Stop PM2 process |
@@ -572,16 +435,6 @@ The included `ecosystem.config.js` configures:
 ## Troubleshooting
 
 ### Common Issues
-
-#### Database Connection Error
-```bash
-# Ensure database file exists
-ls -la db/custom.db
-
-# If not, initialize it
-bun run db:push
-bun run db:seed
-```
 
 #### Port Already in Use
 ```bash

@@ -1,44 +1,56 @@
-import { PrismaClient } from '@prisma/client'
+// Static blog data - No database required
 
-const prisma = new PrismaClient()
+export interface Author {
+  id: string
+  name: string
+  email: string
+  bio: string | null
+  avatar: string | null
+  role: string | null
+  twitter: string | null
+  linkedin: string | null
+  website: string | null
+  isDefault: boolean
+}
 
-async function main() {
-  console.log('Starting seed...')
+export interface BlogPost {
+  slug: string
+  title: string
+  description: string
+  publishedAt: Date
+  author: Author
+  image: string | null
+  tags: string[]
+  readingTime: string
+  content: string
+}
 
-  // Delete existing blog posts
-  await prisma.blogPost.deleteMany({})
-  console.log('Deleted existing blog posts')
+// Default author
+export const defaultAuthor: Author = {
+  id: 'author-1',
+  name: 'Devendar Singh Gohil',
+  email: 'devendar@busynotify.in',
+  bio: 'Founder & CEO at BusyNotify. Passionate about automating BUSY Accounting Software workflows and helping businesses streamline their operations.',
+  avatar: null,
+  role: 'Founder & CEO',
+  twitter: 'busynotify',
+  linkedin: 'in/devendarsinghgohil',
+  website: 'https://busynotify.in',
+  isDefault: true,
+}
 
-  // Create or update the default author - Devendar Singh Gohil
-  const defaultAuthor = await prisma.author.upsert({
-    where: { email: 'devendar@busynotify.in' },
-    update: {
-      name: 'Devendar Singh Gohil',
-      bio: 'Founder & CEO at BusyNotify. Passionate about automating BUSY Accounting Software workflows and helping businesses streamline their operations.',
-      role: 'Founder & CEO',
-      isDefault: true,
-    },
-    create: {
-      name: 'Devendar Singh Gohil',
-      email: 'devendar@busynotify.in',
-      bio: 'Founder & CEO at BusyNotify. Passionate about automating BUSY Accounting Software workflows and helping businesses streamline their operations.',
-      role: 'Founder & CEO',
-      isDefault: true,
-      twitter: 'busynotify',
-      linkedin: 'in/devendarsinghgohil',
-      website: 'https://busynotify.in',
-    },
-  })
-
-  console.log('Created/updated default author:', defaultAuthor)
-
-  // Create SEO-optimized blog posts for BUSY users
-  const blogPosts = [
-    {
-      slug: 'send-invoice-whatsapp-busy-accounting-software',
-      title: 'How to Send Invoice on WhatsApp from BUSY Accounting Software (Step-by-Step Guide)',
-      description: 'Learn how to send invoices directly from BUSY Accounting Software to WhatsApp. Save time, reduce errors, and get faster payments with automated invoice delivery.',
-      content: `
+// Static blog posts data
+export const blogPosts: BlogPost[] = [
+  {
+    slug: 'send-invoice-whatsapp-busy-accounting-software',
+    title: 'How to Send Invoice on WhatsApp from BUSY Accounting Software (Step-by-Step Guide)',
+    description: 'Learn how to send invoices directly from BUSY Accounting Software to WhatsApp. Save time, reduce errors, and get faster payments with automated invoice delivery.',
+    publishedAt: new Date('2025-01-15'),
+    author: defaultAuthor,
+    image: '/images/blog/whatsapp-invoice-busy.svg',
+    tags: ['BUSY Software', 'WhatsApp Integration', 'Invoice Automation', 'Accounting'],
+    readingTime: '10 min read',
+    content: `
 # How to Send Invoice on WhatsApp from BUSY Accounting Software (Step-by-Step Guide)
 
 Are you still exporting invoices from BUSY, saving them as PDFs, and manually sending them one by one on WhatsApp? You're not alone. Thousands of Indian businesses using BUSY Accounting Software face this daily struggle.
@@ -238,17 +250,18 @@ Don't let manual invoice sending slow down your business. Join hundreds of BUSY 
 ---
 
 *Have questions? Call us at +91 96698 23388 or email support@busynotify.in*
-      `,
-      publishedAt: new Date('2025-01-15'),
-      image: '/images/blog/whatsapp-invoice-busy.jpg',
-      tags: 'BUSY Software,WhatsApp Integration,Invoice Automation,Accounting',
-      readingTime: '10 min read',
-    },
-    {
-      slug: 'automate-payment-reminders-busy-software',
-      title: 'How to Automate Payment Reminders in BUSY Software (Reduce Outstanding Payments)',
-      description: 'Discover how to set up automated payment reminders in BUSY Accounting Software. Reduce outstanding payments, improve cash flow, and stop chasing customers manually.',
-      content: `
+    `,
+  },
+  {
+    slug: 'automate-payment-reminders-busy-software',
+    title: 'How to Automate Payment Reminders in BUSY Software (Reduce Outstanding Payments)',
+    description: 'Discover how to set up automated payment reminders in BUSY Accounting Software. Reduce outstanding payments, improve cash flow, and stop chasing customers manually.',
+    publishedAt: new Date('2025-01-10'),
+    author: defaultAuthor,
+    image: '/images/blog/payment-reminders-busy.svg',
+    tags: ['BUSY Software', 'Payment Reminder', 'Outstanding Collection', 'Cash Flow'],
+    readingTime: '12 min read',
+    content: `
 # How to Automate Payment Reminders in BUSY Software (Reduce Outstanding Payments)
 
 Does this sound familiar? You've made the sale, delivered the goods, created the invoice in BUSY – but the payment is still pending after 30, 45, even 60 days.
@@ -523,17 +536,18 @@ Don't let outstanding payments strangle your cash flow. Join hundreds of BUSY us
 ---
 
 *Questions? Call +91 96698 23388 or email support@busynotify.in*
-      `,
-      publishedAt: new Date('2025-01-10'),
-      image: '/images/blog/payment-reminders-busy.jpg',
-      tags: 'BUSY Software,Payment Reminder,Outstanding Collection,Cash Flow',
-      readingTime: '12 min read',
-    },
-    {
-      slug: 'export-busy-data-google-sheets-automatically',
-      title: 'How to Export BUSY Data to Google Sheets Automatically (Real-Time Reporting Guide)',
-      description: 'Learn how to automatically sync BUSY Accounting Software data with Google Sheets. Create live dashboards, share real-time reports, and eliminate manual exports.',
-      content: `
+    `,
+  },
+  {
+    slug: 'export-busy-data-google-sheets-automatically',
+    title: 'How to Export BUSY Data to Google Sheets Automatically (Real-Time Reporting Guide)',
+    description: 'Learn how to automatically sync BUSY Accounting Software data with Google Sheets. Create live dashboards, share real-time reports, and eliminate manual exports.',
+    publishedAt: new Date('2025-01-05'),
+    author: defaultAuthor,
+    image: '/images/blog/google-sheets-busy.svg',
+    tags: ['BUSY Software', 'Google Sheets', 'Data Export', 'Reporting Automation'],
+    readingTime: '14 min read',
+    content: `
 # How to Export BUSY Data to Google Sheets Automatically (Real-Time Reporting Guide)
 
 If you're reading this, you probably spend hours every week exporting reports from BUSY, opening them in Excel, and sharing with your team or accountant.
@@ -893,41 +907,29 @@ Stop wasting time on manual exports. Give your team real-time access to business
 ---
 
 *Questions? Call +91 96698 23388 or email support@busynotify.in*
-      `,
-      publishedAt: new Date('2025-01-05'),
-      image: '/images/blog/google-sheets-busy.jpg',
-      tags: 'BUSY Software,Google Sheets,Data Export,Reporting Automation',
-      readingTime: '14 min read',
-    },
-  ]
+    `,
+  },
+]
 
-  // Create the blog posts
-  for (const post of blogPosts) {
-    await prisma.blogPost.create({
-      data: {
-        slug: post.slug,
-        title: post.title,
-        description: post.description,
-        content: post.content,
-        publishedAt: post.publishedAt,
-        image: post.image,
-        tags: post.tags,
-        readingTime: post.readingTime,
-        authorId: defaultAuthor.id,
-      },
-    })
-    console.log('Created blog post:', post.title)
-  }
-
-  console.log('Seed completed successfully!')
-  console.log('Created 3 SEO-optimized blog posts for BUSY users!')
+// Helper functions (async for compatibility with existing code)
+export async function getBlogPost(slug: string): Promise<BlogPost | null> {
+  return blogPosts.find(post => post.slug === slug) || null
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-    process.exit(1)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })
+export async function getAllBlogPosts(): Promise<BlogPost[]> {
+  return blogPosts.sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
+}
+
+export async function getRelatedPosts(currentSlug: string, limit = 3): Promise<BlogPost[]> {
+  const currentPost = await getBlogPost(currentSlug)
+  if (!currentPost) return []
+
+  return blogPosts
+    .filter(post => post.slug !== currentSlug)
+    .filter(post => post.tags.some(tag => currentPost.tags.includes(tag)))
+    .slice(0, limit)
+}
+
+export async function getDefaultAuthor(): Promise<Author> {
+  return defaultAuthor
+}
