@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Bell, Twitter, Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
+import { Twitter, Github, Linkedin, Mail } from "lucide-react";
 
 const footerLinks = {
   product: [
@@ -41,15 +42,13 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-primary/20 blur-lg rounded-full group-hover:bg-primary/30 transition-colors" />
-                <div className="relative bg-primary rounded-lg p-1.5">
-                  <Bell className="w-5 h-5 text-primary-foreground" />
-                </div>
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                Busy<span className="text-primary">Notify</span>
-              </span>
+              <Image 
+                src="/logo.svg" 
+                alt="BusyNotify - BUSY Software Automation" 
+                width={150} 
+                height={30}
+                className="h-7 w-auto"
+              />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               BUSY Software Automation Platform for Indian businesses. WhatsApp, Payment Reminders, Reports & APIs.

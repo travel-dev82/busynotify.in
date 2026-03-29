@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useSyncExternalStore, useId } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bell, Menu, X, Moon, Sun } from "lucide-react";
@@ -101,15 +102,14 @@ export function Navbar() {
           )}>
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-primary/20 blur-lg rounded-full group-hover:bg-primary/30 transition-colors" />
-                <div className="relative bg-primary rounded-lg p-1.5">
-                  <Bell className="w-5 h-5 text-primary-foreground" />
-                </div>
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                Busy<span className="text-primary">Notify</span>
-              </span>
+              <Image 
+                src="/logo.svg" 
+                alt="BusyNotify - BUSY Software Automation" 
+                width={165} 
+                height={34}
+                className="h-8 w-auto"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -203,12 +203,13 @@ export function Navbar() {
             >
               <div className="flex items-center justify-between p-4 border-b border-border">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <div className="bg-primary rounded-lg p-1.5">
-                    <Bell className="w-5 h-5 text-primary-foreground" />
-                  </div>
-                  <span className="text-xl font-bold tracking-tight">
-                    Busy<span className="text-primary">Notify</span>
-                  </span>
+                  <Image 
+                    src="/logo.svg" 
+                    alt="BusyNotify" 
+                    width={140} 
+                    height={28}
+                    className="h-7 w-auto"
+                  />
                 </Link>
                 <Button
                   variant="ghost"

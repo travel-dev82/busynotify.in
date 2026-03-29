@@ -425,3 +425,83 @@
 .dark {
   color-scheme: dark;
 }
+
+/* Blog Content Styles */
+.blog-content {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.blog-content h2 {
+  scroll-margin-top: 100px;
+}
+
+.blog-content h3 {
+  scroll-margin-top: 100px;
+}
+
+.blog-content a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+}
+
+.blog-content pre {
+  tab-size: 2;
+}
+
+.blog-content pre code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Blog content code syntax highlighting simulation */
+.blog-content code:not(pre code) {
+  font-weight: 500;
+}
+
+/* Mobile blog content adjustments */
+@media (max-width: 768px) {
+  .blog-content {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  
+  .blog-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .blog-content h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Table styles in blog content */
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.blog-content th,
+.blog-content td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+.blog-content th {
+  background: var(--muted);
+  font-weight: 600;
+}
+
+.blog-content tr:hover {
+  background: var(--muted);
+}

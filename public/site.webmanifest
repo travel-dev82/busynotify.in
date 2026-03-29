@@ -1,0 +1,17 @@
+{
+  "name": "BusyNotify - BUSY Software Automation",
+  "short_name": "BusyNotify",
+  "description": "BUSY Software Automation Platform for Indian businesses. WhatsApp, Payment Reminders, Reports & APIs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#2B7C6E",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
